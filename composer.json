@@ -1,19 +1,28 @@
 {
-    "name": "laravel/laravel",
+    "name": "vento/jotajoti_reg",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Manage ",
     "keywords": [
-        "framework",
-        "laravel"
+        "jojoreg",
+        "jotajoti_reg",
+		"scout",
+		"pfadi",
+		"jota",
+		"joti",
+		"anmeldung",
+		"registration"
     ],
-    "license": "MIT",
     "require": {
         "php": "^7.2",
+        "codedge/laravel-fpdf": "^1.5",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "laravelcollective/html": "^6.0"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.2",
+        "barryvdh/laravel-ide-helper": "^2.6",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.4",
         "laravel/ui": "^1.1",
