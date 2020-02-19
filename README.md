@@ -25,9 +25,11 @@
 		- [ ] Notfallblatt (File)
 		- [ ] Impfausweis (File)
 		- [ ] Bedingungen (Select)
-- [ ] Limitierung anmeldung pro Jahr
-- [ ] 
-
-### Nice to have
- - [ ] Mailingliste intern oder MiData
- - [ ] 
+- [ ] Mehrere Standorte
+- [ ] Limitierung anmeldung pro Jahr & Standort
+- [ ] Präferierter Standort (Meeting Discus)
+- [ ] Anmeldebestätigung per Mail versenden
+- [ ] Kein Login für Teilnehmer, sondern Unique-Link & Ref-ID
+- [ ] Startdatum für die Anmeldung
+- [ ] MD-Template für die Bediungen
+- [ ] Tooltips im Frontend-Formular --> (i) --> Gib deinen Namen ein...
