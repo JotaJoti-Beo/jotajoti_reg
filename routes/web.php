@@ -40,5 +40,10 @@ Route::group(['middleware' => ['auth']], function (){
 	Route::post('/groups/update/{gid}', 'GroupsController@update')->name('update-groups');
 	Route::get('/groups/destroy/{gid}', 'GroupsController@destroy')->name('destroy-groups');
 
-
+	Route::any('/places', 'PlacesController@index')->name('places');
+	Route::get('/places/add', 'PlacesController@create')->name('add-places');
+	Route::post('/places/store', 'PlacesController@store')->name('store-places');
+	Route::get('/places/edit/{eid}', 'PlacesController@edit')->name('edit-places');
+	Route::post('/places/update/{eid}', 'PlacesController@update')->name('update-places');
+	Route::get('/places/destroy/{eid}', 'PlacesController@destroy')->name('destroy-places');
 });
