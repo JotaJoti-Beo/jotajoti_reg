@@ -4,27 +4,27 @@
 ### Notwendige Funktionen
  - [ ] Anmeldung von TN
  	- [ ] TN-Info
- 		- [ ] Name + Pfadiname
- 		- [ ] Mobile (Optional)
- 		- [ ] Mail (Optional)
- 		- [ ] Essgewonheit (Vegi, Vegan, Nein)
- 		- [ ] Allergien
- 		- [ ] Stufe + Jahrgang
- 		- [ ] Abteilung
- 		- [ ] Anwesenheit am WE (2 Tage für Pfadi, 3 für Pio ü 16)
- 		- [ ] Erfahrung mit Löten (Nein, Jota Joti, Andere)
+ 		- [ ] Name + Pfadiname (Text, Text)
+ 		- [ ] Mobile (Optional)(Text)
+ 		- [ ] Mail (Optional)(Text)
+ 		- [ ] Essgewonheit (Vegi, Vegan, Nein) (Multiselect, Text)
+ 		- [ ] Allergien (Textfield)
+ 		- [ ] Stufe + Jahrgang (Option, Picker)
+ 		- [ ] Abteilung (Picker)
+ 		- [ ] Anwesenheit am WE (2 Tage für Pfadi, 3 für Pio ü 16) (Multiselect)
+ 		- [ ] Erfahrung mit Löten (Nein, Jota Joti, Andere) (Select)
 	- [ ] Eltern-Infos
-		- [ ] Name
-		- [ ] Adresse
-		- [ ] Telefon erreichbar während dem Wochenende
-		- [ ] Kontakt-Mail
+		- [ ] Name (Text)
+		- [ ] Adresse (Text)
+		- [ ] Telefon erreichbar während dem Wochenende (Text)
+		- [ ] Kontakt-Mail (Text)
 	- [ ] Geräte
-		- [ ] Laptop
+		- [ ] Laptop (Ja / Nein)
 	- [ ] Administrativ
-		- [ ] Photos erlaubt
-		- [ ] Notfallblatt
-		- [ ] Impfausweis
-		- [ ] AGB
+		- [ ] Photos erlaubt (Ja / Nein)
+		- [ ] Notfallblatt (File)
+		- [ ] Impfausweis (File)
+		- [ ] Bedingungen (Select)
 - [ ] Limitierung anmeldung pro Jahr
 - [ ] 
 
