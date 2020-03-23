@@ -46,4 +46,18 @@ Route::group(['middleware' => ['auth']], function (){
 	Route::get('/places/edit/{eid}', 'PlacesController@edit')->name('edit-places');
 	Route::post('/places/update/{eid}', 'PlacesController@update')->name('update-places');
 	Route::get('/places/destroy/{eid}', 'PlacesController@destroy')->name('destroy-places');
+
+	Route::any('/activities', 'ActivityController@index')->name('activities');
+	Route::get('/activities/add', 'ActivityController@create')->name('add-activities');
+	Route::post('/activities/store', 'ActivityController@store')->name('store-activities');
+	Route::get('/activities/edit/{eid}', 'ActivityController@edit')->name('edit-activities');
+	Route::post('/activities/update/{eid}', 'ActivityController@update')->name('update-activities');
+	Route::get('/activities/destroy/{eid}', 'ActivityController@destroy')->name('destroy-activities');
+
+	Route::any('/news', 'NewsController@index')->name('news');
+	Route::get('/news/add', 'NewsController@create')->name('add-news');
+	Route::post('/news/store', 'NewsController@store')->name('store-news');
+	Route::get('/news/edit/{eid}', 'NewsController@edit')->name('edit-news');
+	Route::post('/news/update/{eid}', 'NewsController@update')->name('update-news');
+	Route::get('/news/destroy/{eid}', 'NewsController@destroy')->name('destroy-news');
 });
