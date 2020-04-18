@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlacesActivities extends Migration
+class CreateAdmTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreatePlacesActivities extends Migration
      */
     public function up()
     {
-        Schema::create('places_activities', function(Blueprint $table){
-        	$table->bigIncrements('id');
-        	$table->timestamps();
+        Schema::create('adm', function (Blueprint $table) {
+            $table->id();
+            $table->dateTime('start_reg');
+            $table->dateTime('end_reg');
+            $table->integer('max_tn');
+            $table->timestamps();
         });
     }
 
@@ -26,6 +29,6 @@ class CreatePlacesActivities extends Migration
      */
     public function down()
     {
-	    Schema::dropIfExists('places_activities');
+        Schema::dropIfExists('adm');
     }
 }

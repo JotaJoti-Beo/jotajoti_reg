@@ -15,6 +15,17 @@ class CreateParticipantsTable extends Migration
     {
         Schema::create('participants', function (Blueprint $table) {
             $table->bigIncrements('id');
+	        $table->string('scoutname')->nullable();
+	        $table->string('firstname');
+	        $table->string('lastname');
+	        $table->string('address');
+	        $table->string('plz');
+	        $table->string('place');
+	        $table->date('birthday');
+	        $table->string('gender')->nullable();
+	        $table->string('person_picture')->nullable();
+	        $table->string('auth_token');
+	        $table->bigInteger('FK_GRP')->unsigned()->index()->nullable();
             $table->timestamps();
         });
     }
