@@ -11,7 +11,6 @@
  		- [ ] Allergien (Textfield)
  		- [ ] Stufe + Jahrgang (Option, Picker)
  		- [ ] Abteilung (Picker)
- 		- [ ] Anwesenheit am WE (2 Tage für Pfadi, 3 für Pio ü 16) (Multiselect)
  		- [ ] Erfahrung mit Löten (Nein, Jota Joti, Andere) (Select)
 	- [ ] Eltern-Infos
 		- [ ] Name (Text)

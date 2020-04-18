@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStagesTable extends Migration
+class CreateEatingHabitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateStagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('stages', function (Blueprint $table) {
+        Schema::create('eating_habits', function (Blueprint $table) {
             $table->id();
-            $table->string('stage_name');
-            $table->dateTime('starttime');
-            $table->dateTime('endtime');
+            $table->string('eating_habits_name');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateStagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stages');
+        Schema::dropIfExists('eating_habits');
     }
 }

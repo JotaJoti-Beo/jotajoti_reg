@@ -15,6 +15,11 @@ class CreateFks extends Migration
     {
 	    Schema::table('participants', function(Blueprint $table){
 		    $table->foreign('FK_GRP')->references('id')->on('groups')->onDelete('cascade');
+		    $table->foreign('FK_GRP')->references('id')->on('groups')->onDelete('cascade');
+		    $table->foreign('FK_GRP')->references('id')->on('groups')->onDelete('cascade');
+		    $table->foreign('FK_GRP')->references('id')->on('groups')->onDelete('cascade');
+		    $table->foreign('FK_GRP')->references('id')->on('groups')->onDelete('cascade');
+		    $table->foreign('FK_GRP')->references('id')->on('groups')->onDelete('cascade');
 	    });
 
 	    Schema::table('places_activities', function(Blueprint $table){

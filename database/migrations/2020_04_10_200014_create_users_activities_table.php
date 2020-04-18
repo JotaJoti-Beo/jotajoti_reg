@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStagesTable extends Migration
+class CreateUsersActivitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateStagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('stages', function (Blueprint $table) {
+        Schema::create('users_activities', function (Blueprint $table) {
             $table->id();
-            $table->string('stage_name');
-            $table->dateTime('starttime');
-            $table->dateTime('endtime');
+            $table->bigInteger('FK_USR');
+            $table->bigInteger('FK_ACT');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateStagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stages');
+        Schema::dropIfExists('users_activities');
     }
 }

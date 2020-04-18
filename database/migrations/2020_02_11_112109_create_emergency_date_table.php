@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStagesTable extends Migration
+class CreateEmergencyDateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateStagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('stages', function (Blueprint $table) {
+        Schema::create('emergency_date', function (Blueprint $table) {
             $table->id();
-            $table->string('stage_name');
-            $table->dateTime('starttime');
-            $table->dateTime('endtime');
+            $table->string('file_name');
+            $table->bigInteger('FK_PART');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateStagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stages');
+        Schema::dropIfExists('emergency_date');
     }
 }

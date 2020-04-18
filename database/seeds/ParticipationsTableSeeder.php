@@ -12,17 +12,17 @@ class ParticipationsTableSeeder extends Seeder
 	public function run()
 	{
 		$faker = Faker\Factory::create();
-		DB::table('participations')->insert([
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-			['scoutname' => $faker->userName, 'firstname' => $faker->firstName, 'lastname' => $faker->lastName, 'address' => $faker->address, 'plz' => $faker->postcode, 'place' =>  $faker->city, 'birthday' => $faker->date(), 'gender' => 'male'],
-		]);
+		DB::table('participants')->insert([
+			[
+			    'scoutname' => $faker->userName,
+                'firstname' => $faker->firstName,
+                'lastname' => $faker->lastName,
+                'address' => $faker->address,
+                'plz' => $faker->postcode,
+                'place' =>  $faker->city,
+                'birthday' => $faker->date(),
+                'gender' => 'male'
+            ],
+        ]);
 	}
 }
