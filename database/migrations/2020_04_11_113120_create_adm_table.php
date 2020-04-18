@@ -15,8 +15,8 @@ class CreateAdmTable extends Migration
     {
         Schema::create('adm', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('start_reg');
-            $table->dateTime('end_reg');
+            $table->dateTime('start_reg')->nullable();
+            $table->dateTime('end_reg')->nullable();
             $table->integer('max_tn');
             $table->timestamps();
         });
