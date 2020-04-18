@@ -17,8 +17,8 @@ Route::get('/', 'PublicController@index')->name('public');
 
 Auth::routes();
 
-Route::group(['middleware' => ['auth']], function (){
-	Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function (){
+	Route::get('/overwatch', 'OverwatchController@index')->name('overwatch');
 
 	Route::any('/participations', 'ParticipationsController@index')->name('participations');
 	Route::get('/participations/add', 'ParticipationsController@create')->name('add-participations');
