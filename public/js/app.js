@@ -40569,12 +40569,6 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
@@ -40607,8 +40601,8 @@ __webpack_require__(/*! bootstrap-select */ "./node_modules/bootstrap-select/dis
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\dev\jotajoto_reg\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\dev\jotajoto_reg\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\dev\jotajoti_reg\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\dev\jotajoti_reg\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
