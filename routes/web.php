@@ -13,25 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PublicController@index')->name('public');
+Route::get('/', 'Frontend\RegisterController@index')->name('public');
 
 
 Auth::routes(['register' => false]);
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function (){
-    Route::get('/overwatch', 'OverwatchController@index')->name('overwatch');
+    Route::get('/overwatch', 'Backend\OverwatchController@index')->name('overwatch');
 
-    Route::any('/participations', 'ParticipationsController@index')->name('participations');
-    Route::get('/participations/add', 'ParticipationsController@create')->name('add-participations');
-    Route::post('/participations/store', 'ParticipationsController@store')->name('store-participations');
-    Route::post('participations/import', 'ParticipationsController@import')->name('import-participations');
-    Route::get('/participations/edit/{pid}', 'ParticipationsController@edit')->name('edit-participations');
-    Route::post('/participations/update/{pid}', 'ParticipationsController@update')->name('update-participations');
-    Route::get('/participations/destroy/{pid}', 'ParticipationsController@destroy')->name('destroy-participations');
+    Route::any('/participations', 'Backend\ParticipationsController@index')->name('participations');
+    Route::get('/participations/add', 'Backend\ParticipationsController@create')->name('add-participations');
+    Route::post('/participations/store', 'Backend\ParticipationsController@store')->name('store-participations');
+    Route::post('participations/import', 'Backend\ParticipationsController@import')->name('import-participations');
+    Route::get('/participations/edit/{pid}', 'Backend\ParticipationsController@edit')->name('edit-participations');
+    Route::post('/participations/update/{pid}', 'Backend\ParticipationsController@update')->name('update-participations');
+    Route::get('/participations/destroy/{pid}', 'Backend\ParticipationsController@destroy')->name('destroy-participations');
 
-    Route::any('/users', 'UsersController@index')->name('users');
-    Route::get('/users/add', 'UsersController@create')->name('add-users');
-    Route::post('/users/store', 'UsersController@store')->name('store-users');
+    Route::any('/users', 'Backend\UsersController@index')->name('users');
+    Route::get('/users/add', 'Backend\UsersController@create')->name('add-users');
+    Route::post('/users/store', 'Backend\UsersController@store')->name('store-users');
     Route::get('/users/edit/{uid}', 'UsersController@edit')->name('edit-users');
     Route::post('/users/update/{uid}', 'UsersController@update')->name('update-users');
     Route::get('/users/destroy/{uid}', 'UsersController@destroy')->name('destroy-users');
