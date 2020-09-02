@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Frontend\RegisterController@index')->name('public');
 
-
 Auth::routes(['register' => false]);
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
