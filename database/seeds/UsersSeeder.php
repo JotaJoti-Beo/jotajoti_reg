@@ -1,9 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Foundation\Auth\User;
 
-class UsersTableSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,12 +16,7 @@ class UsersTableSeeder extends Seeder
         $seededAdminEmail = 'admin@jojo.ch';
         $user = User::where('email', '=', $seededAdminEmail)->first();
         if ($user === null) {
-            $user = User::create([
-                'scoutname' => 'Admin',
-                'firstname' => 'Admin',
-                'lastname' => 'Admin',
-                'email' => $seededAdminEmail,
-                'password' => Hash::make('password'),]);
+            $user = User::create(['scout_name' => 'Admin', 'first_name' => 'Admin', 'last_name' => 'Admin', 'email' => $seededAdminEmail, 'password' => Hash::make('password'),]);
             $user->save();
         }
 
@@ -30,9 +25,9 @@ class UsersTableSeeder extends Seeder
         $user = User::where('email', '=', $seededUserEmail)->first();
         if ($user === null) {
             $user = User::create([
-                'scoutname'                     => 'Vento',
-                'firstname'                     => 'Caspar',
-                'lastname'                      => 'Brenneisen',
+                'scout_name'                     => 'Vento',
+                'first_name'                     => 'Caspar',
+                'last_name'                      => 'Brenneisen',
                 'email'                          => $seededUserEmail,
                 'password'                       => Hash::make('password'),
             ]);
