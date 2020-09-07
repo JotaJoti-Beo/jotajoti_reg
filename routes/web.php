@@ -20,6 +20,13 @@ Auth::routes(['register' => false]);
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::get('/overwatch', 'Backend\OverwatchController@index')->name('overwatch');
 
+    Route::any('/users', 'Backend\UsersController@index')->name('users');
+    Route::get('/users/add', 'Backend\UsersController@create')->name('add-users');
+    Route::post('/users/store', 'Backend\UsersController@store')->name('store-users');
+    Route::get('/users/edit/{uid}', 'UsersController@edit')->name('edit-users');
+    Route::post('/users/update/{uid}', 'UsersController@update')->name('update-users');
+    Route::get('/users/destroy/{uid}', 'UsersController@destroy')->name('destroy-users');
+
     Route::any('/participations', 'Backend\ParticipationsController@index')->name('participations');
     Route::get('/participations/add', 'Backend\ParticipationsController@create')->name('add-participations');
     Route::post('/participations/store', 'Backend\ParticipationsController@store')->name('store-participations');
@@ -27,13 +34,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::get('/participations/edit/{pid}', 'Backend\ParticipationsController@edit')->name('edit-participations');
     Route::post('/participations/update/{pid}', 'Backend\ParticipationsController@update')->name('update-participations');
     Route::get('/participations/destroy/{pid}', 'Backend\ParticipationsController@destroy')->name('destroy-participations');
-
-    Route::any('/users', 'Backend\UsersController@index')->name('users');
-    Route::get('/users/add', 'Backend\UsersController@create')->name('add-users');
-    Route::post('/users/store', 'Backend\UsersController@store')->name('store-users');
-    Route::get('/users/edit/{uid}', 'UsersController@edit')->name('edit-users');
-    Route::post('/users/update/{uid}', 'UsersController@update')->name('update-users');
-    Route::get('/users/destroy/{uid}', 'UsersController@destroy')->name('destroy-users');
 
     Route::any('/groups', 'GroupsController@index')->name('groups');
     Route::get('/groups/add', 'GroupsController@create')->name('add-groups');
