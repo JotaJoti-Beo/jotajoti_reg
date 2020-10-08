@@ -17,6 +17,10 @@ class CreateFk extends Migration
            $table->foreign('group_id')->references('id')->on('group');
            $table->foreign('place_id')->references('id')->on('place');
         });
+
+        Schema::table('file', function(Blueprint $table) {
+            $table->foreign('participant_id')->references('id')->on('participant');
+        });
     }
 
     /**

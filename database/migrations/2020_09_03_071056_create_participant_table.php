@@ -45,6 +45,8 @@ class CreateParticipantTable extends Migration
             $table->uuid('uuid');
             $table->uuid('reference');
 
+            $table->boolean('isOnHold')->default(false);
+
             $table->timestamps();
         });
     }
