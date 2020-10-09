@@ -13,7 +13,8 @@ class File extends Model
         'participant_id'
     ];
 
-    public function participant(){
+    public function participant()
+    {
         return $this->hasOne('App\Models\Participant');
     }
 }

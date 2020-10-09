@@ -40,11 +40,13 @@ class Participant extends Model
         'reference',
     ];
 
-    public function place(){
+    public function place()
+    {
         return $this->hasOne('App\Models\Place');
     }
 
-    public function group(){
+    public function group()
+    {
         return $this->hasOne('App\Models\Group');
     }
 }

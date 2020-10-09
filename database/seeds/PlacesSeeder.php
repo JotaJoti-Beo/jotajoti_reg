@@ -29,10 +29,10 @@ class PlacesSeeder extends Seeder
             ]
         ];
 
-        foreach($places_container as $new_place) {
+        foreach ($places_container as $new_place) {
             $place = Place::where('place_name', '=', $new_place['place_name'])->first();
 
-            if($place == null) {
+            if ($place == null) {
                 $place = Place::create([
                     'place_name' => $new_place['place_name'],
                     'place_address' => $new_place['place_address'],

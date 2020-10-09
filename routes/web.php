@@ -23,9 +23,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::any('/users', 'Backend\UsersController@index')->name('users');
     Route::get('/users/add', 'Backend\UsersController@create')->name('add-users');
     Route::post('/users/store', 'Backend\UsersController@store')->name('store-users');
-    Route::get('/users/edit/{uid}', 'UsersController@edit')->name('edit-users');
-    Route::post('/users/update/{uid}', 'UsersController@update')->name('update-users');
-    Route::get('/users/destroy/{uid}', 'UsersController@destroy')->name('destroy-users');
+    Route::get('/users/edit/{uid}', 'Backend\UsersController@edit')->name('edit-users');
+    Route::post('/users/update/{uid}', 'Backend\UsersController@update')->name('update-users');
+    Route::get('/users/destroy/{uid}', 'Backend\UsersController@destroy')->name('destroy-users');
 
     Route::any('/participations', 'Backend\ParticipationsController@index')->name('participations');
     Route::get('/participations/add', 'Backend\ParticipationsController@create')->name('add-participations');
