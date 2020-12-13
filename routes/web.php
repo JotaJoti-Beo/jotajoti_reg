@@ -36,31 +36,33 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::post('/participations/update/{pid}', 'Backend\ParticipationsController@update')->name('update-participations');
     Route::get('/participations/destroy/{pid}', 'Backend\ParticipationsController@destroy')->name('destroy-participations');
 
-    Route::any('/groups', 'GroupsController@index')->name('groups');
-    Route::get('/groups/add', 'GroupsController@create')->name('add-groups');
-    Route::post('/groups/store', 'GroupsController@store')->name('store-groups');
-    Route::get('/groups/edit/{gid}', 'GroupsController@edit')->name('edit-groups');
-    Route::post('/groups/update/{gid}', 'GroupsController@update')->name('update-groups');
-    Route::get('/groups/destroy/{gid}', 'GroupsController@destroy')->name('destroy-groups');
+    Route::any('/groups', 'Backend\GroupsController@index')->name('groups');
+    Route::get('/groups/add', 'Backend\GroupsController@create')->name('add-groups');
+    Route::post('/groups/store', 'Backend\GroupsController@store')->name('store-groups');
+    Route::get('/groups/edit/{gid}', 'Backend\GroupsController@edit')->name('edit-groups');
+    Route::post('/groups/update/{gid}', 'Backend\GroupsController@update')->name('update-groups');
+    Route::get('/groups/destroy/{gid}', 'Backend\GroupsController@destroy')->name('destroy-groups');
 
-    Route::any('/places', 'PlacesController@index')->name('places');
-    Route::get('/places/add', 'PlacesController@create')->name('add-places');
-    Route::post('/places/store', 'PlacesController@store')->name('store-places');
-    Route::get('/places/edit/{eid}', 'PlacesController@edit')->name('edit-places');
-    Route::post('/places/update/{eid}', 'PlacesController@update')->name('update-places');
-    Route::get('/places/destroy/{eid}', 'PlacesController@destroy')->name('destroy-places');
+    Route::any('/places', 'Backend\PlacesController@index')->name('places');
+    Route::get('/places/add', 'Backend\PlacesController@create')->name('add-places');
+    Route::post('/places/store', 'Backend\PlacesController@store')->name('store-places');
+    Route::get('/places/edit/{eid}', 'Backend\PlacesController@edit')->name('edit-places');
+    Route::post('/places/update/{eid}', 'Backend\PlacesController@update')->name('update-places');
+    Route::get('/places/destroy/{eid}', 'Backend\PlacesController@destroy')->name('destroy-places');
 
-    Route::any('/activities', 'ActivityController@index')->name('activities');
-    Route::get('/activities/add', 'ActivityController@create')->name('add-activities');
-    Route::post('/activities/store', 'ActivityController@store')->name('store-activities');
-    Route::get('/activities/edit/{eid}', 'ActivityController@edit')->name('edit-activities');
-    Route::post('/activities/update/{eid}', 'ActivityController@update')->name('update-activities');
-    Route::get('/activities/destroy/{eid}', 'ActivityController@destroy')->name('destroy-activities');
+    Route::any('/activities', 'Backend\ActivityController@index')->name('activities');
+    Route::get('/activities/add', 'Backend\ActivityController@create')->name('add-activities');
+    Route::post('/activities/store', 'Backend\ActivityController@store')->name('store-activities');
+    Route::get('/activities/edit/{eid}', 'Backend\ActivityController@edit')->name('edit-activities');
+    Route::post('/activities/update/{eid}', 'Backend\ActivityController@update')->name('update-activities');
+    Route::get('/activities/destroy/{eid}', 'Backend\ActivityController@destroy')->name('destroy-activities');
 
-    Route::any('/news', 'NewsController@index')->name('news');
-    Route::get('/news/add', 'NewsController@create')->name('add-news');
-    Route::post('/news/store', 'NewsController@store')->name('store-news');
-    Route::get('/news/edit/{eid}', 'NewsController@edit')->name('edit-news');
-    Route::post('/news/update/{eid}', 'NewsController@update')->name('update-news');
-    Route::get('/news/destroy/{eid}', 'NewsController@destroy')->name('destroy-news');
+    Route::any('/news', 'Backend\NewsController@index')->name('news');
+    Route::get('/news/add', 'Backend\NewsController@create')->name('add-news');
+    Route::post('/news/store', 'Backend\NewsController@store')->name('store-news');
+    Route::get('/news/edit/{eid}', 'Backend\NewsController@edit')->name('edit-news');
+    Route::post('/news/update/{eid}', 'Backend\NewsController@update')->name('update-news');
+    Route::get('/news/destroy/{eid}', 'Backend\NewsController@destroy')->name('destroy-news');
+
+    Route::resource('profile', 'Backend\ProfileController')->only('index', 'update');
 });
