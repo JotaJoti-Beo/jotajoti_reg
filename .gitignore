@@ -1,3 +1,5 @@
+.php_cs.cache
+
 # Created by https://www.toptal.com/developers/gitignore/api/node,macos,laravel,phpstorm+all,windows,composer
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,macos,laravel,phpstorm+all,windows,composer
 
