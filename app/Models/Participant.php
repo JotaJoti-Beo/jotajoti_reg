@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Participant extends Model
 {
-    protected $table = 'participant';
+    protected $table = 'participants';
 
     protected $fillable = [
         'scout_name',
