@@ -18,6 +18,7 @@ Route::get('/', 'Frontend\RegisterController@index')->name('public');
 Auth::routes(['register' => false]);
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
+    Route::redirect('/', '/admin/overwatch', 301);
     Route::get('/overwatch', 'Backend\OverwatchController@index')->name('overwatch');
 
     Route::any('/users', 'Backend\UsersController@index')->name('users');
