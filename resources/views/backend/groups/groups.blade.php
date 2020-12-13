@@ -42,9 +42,6 @@
 							Abteilung
 						</th>
 						<th>
-							Posten
-						</th>
-						<th>
 							Optionen
 						</th>
 						</thead>
@@ -55,11 +52,8 @@
 									{{ $group->group_name }}
 								</td>
 								<td>
-									{{ $group->field_name }}
-								</td>
-								<td>
-									<button onclick="location.href='{{ route('edit-groups',$group->group_id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
-									<button onclick="location.href='{{ route('destroy-groups',$group->group_id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
+									<button onclick="location.href='{{ route('edit-groups',$group->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
+									<button onclick="location.href='{{ route('destroy-groups',$group->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
 								</td>
 							</tr>
 						@endforeach
