@@ -32,11 +32,11 @@
                                 Teilnehmer
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item {{ Request::is('admin/groups/')}}" href="{{ url('/groups') }}">
+                            <a class="dropdown-item {{ Request::is('admin/groups/')}}" href="{{ url('/admin/groups') }}">
                                 Gruppen
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item {{ Request::is('admin/places/')}}" href="{{ url('/places') }}">
+                            <a class="dropdown-item {{ Request::is('admin/places/')}}" href="{{ url('/admin/places') }}">
                                 Orte
                             </a>
                             <div class="dropdown-divider"></div>
