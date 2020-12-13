@@ -13,23 +13,13 @@ class CreateFk extends Migration
      */
     public function up()
     {
-        Schema::table('participant', function (Blueprint $table) {
-            $table->foreign('group_id')->references('id')->on('group');
-            $table->foreign('place_id')->references('id')->on('place');
+        Schema::table('participants', function (Blueprint $table) {
+            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('place_id')->references('id')->on('places');
         });
 
         Schema::table('file', function (Blueprint $table) {
-            $table->foreign('participant_id')->references('id')->on('participant');
+            $table->foreign('participant_id')->references('id')->on('participants');
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        //
     }
 }
