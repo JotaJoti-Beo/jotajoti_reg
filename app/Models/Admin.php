@@ -12,6 +12,6 @@ class Admin extends Model
         'reg_start',
         'jojo_start',
         'jojo_end',
-        'max_tn'
+        'max_tn',
     ];
 }

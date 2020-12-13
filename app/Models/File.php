@@ -10,7 +10,7 @@ class File extends Model
 
     protected $fillable = [
         'file_name',
-        'participant_id'
+        'participant_id',
     ];
 
     public function participant()

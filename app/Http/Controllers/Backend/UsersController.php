@@ -75,7 +75,7 @@ class UsersController extends Controller
                 'first_name' => $first_name,
                 'last_name' => $last_name,
                 'email' => $email,
-                'password' => $password
+                'password' => $password,
             ]);
 
             return redirect()->back()->with('message', 'Benutzer wurde erstellt.');
@@ -126,7 +126,7 @@ class UsersController extends Controller
                 'first_name' => $first_name,
                 'last_name' => $last_name,
                 'email' => $email,
-                'password' => $password
+                'password' => $password,
             ]);
 
             return redirect()->back()->with('message', 'Benutzer wurde aktualisiert.');

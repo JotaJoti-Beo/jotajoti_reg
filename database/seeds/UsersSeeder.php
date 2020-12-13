@@ -16,7 +16,7 @@ class UsersSeeder extends Seeder
         $seededAdminEmail = 'admin@jojo.ch';
         $user = User::where('email', '=', $seededAdminEmail)->first();
         if ($user === null) {
-            $user = User::create(['scout_name' => 'Admin', 'first_name' => 'Admin', 'last_name' => 'Admin', 'email' => $seededAdminEmail, 'password' => Hash::make('password'),]);
+            $user = User::create(['scout_name' => 'Admin', 'first_name' => 'Admin', 'last_name' => 'Admin', 'email' => $seededAdminEmail, 'password' => Hash::make('password')]);
             $user->save();
         }
 

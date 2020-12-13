@@ -26,7 +26,7 @@ class PlacesSeeder extends Seeder
                 'place_city' => 'Stettlen',
                 'place_plz' => '3066',
                 'place_max_tn' => '30',
-            ]
+            ],
         ];
 
         foreach ($places_container as $new_place) {

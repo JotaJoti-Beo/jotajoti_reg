@@ -25,9 +25,9 @@ class ParticipationsController extends Controller
         if ($request->input('search') == null) {
             $participants = Participant::all();
 
-            /*$participations = DB::table('participant')
-                ->leftJoin('groups', 'groups.id', '=', 'participant.FK_GRP')
-                ->select('participations.*', 'groups.group_name')->get();*/
+        /*$participations = DB::table('participant')
+            ->leftJoin('groups', 'groups.id', '=', 'participant.FK_GRP')
+            ->select('participations.*', 'groups.group_name')->get();*/
         } else {
             $search_string = $request->input('search');
             $participants = DB::table('participations')
@@ -230,7 +230,7 @@ class ParticipationsController extends Controller
         $participant->birthday = $birthday;
         $participant->gender = $gender;
         $participant->FK_GRP = $group;
-        if($img_name != null){
+        if ($img_name != null) {
             $participant->person_picture = $img_name;
         }
 
