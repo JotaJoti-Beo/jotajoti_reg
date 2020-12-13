@@ -11,56 +11,56 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
         @if(!Auth::guest())
             <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link {{ Request::is('admin/overwatch/')}}" href="{{ url('/admin/overwatch') }}">
-                            Overwatch
-                        </a>
-                    </li>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('admin/overwatch/')}}" href="{{ url('/admin/overwatch') }}">
+                        Overwatch
+                    </a>
+                </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Konfig
-                        </a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Konfig
+                    </a>
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item {{ Request::is('admin/users/')}}" href="{{ url('/admin/users') }}">
-                                Benutzer
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item {{ Request::is('admin/participations/')}}" href="{{ url('/admin/participations') }}">
-                                Teilnehmer
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item {{ Request::is('admin/groups/')}}" href="{{ url('/admin/groups') }}">
-                                Gruppen
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item {{ Request::is('admin/places/')}}" href="{{ url('/admin/places') }}">
-                                Orte
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item {{ Request::is('admin/admin/')}}" href="{{ url('/admin/admin') }}">
-                                Administration
-                            </a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Druckerei
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item {{ Request::is('admin/users/')}}" href="{{ url('/admin/users') }}">
+                            Benutzer
                         </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item {{ Request::is('admin/participations/')}}" href="{{ url('/admin/participations') }}">
+                            Teilnehmer
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item {{ Request::is('admin/groups/')}}" href="{{ url('/admin/groups') }}">
+                            Gruppen
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item {{ Request::is('admin/places/')}}" href="{{ url('/admin/places') }}">
+                            Orte
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item {{ Request::is('admin/admin/')}}" href="{{ url('/admin/admin') }}">
+                            Administration
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Druckerei
+                    </a>
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item {{ Request::is('admin/print/pdf/')}}" href="{{ url('/admin/print/pdf') }}">
-                                TN-Liste (PDF)
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item {{ Request::is('admin/print/excel/')}}" href="{{ url('/admin/print/excel') }}">
-                                TN-Liste (Excel)
-                            </a>
-                        </div>
-                    </li>
-                </ul>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item {{ Request::is('admin/print/pdf/')}}" href="{{ url('/admin/print/pdf') }}">
+                            TN-Liste (PDF)
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item {{ Request::is('admin/print/excel/')}}" href="{{ url('/admin/print/excel') }}">
+                            TN-Liste (Excel)
+                        </a>
+                    </div>
+                </li>
+            </ul>
         @endif
 
         <!-- Right Side Of Navbar -->
