@@ -12,7 +12,7 @@
 			<div class="card-header">
 				{!! Form::open(array('route' => 'users', 'method' => 'POST', 'role' => 'form', 'class' => 'needs-validation')) !!}
 				<div class="input-group" id="adv-search">
-					{!! Form::text('search', NULL, array('id' => 'search', 'class' => 'form-control', 'placeholder' => 'Suche')) !!}
+					{!! Form::text('search', NULL, array('id' => 'search', 'class' => 'form-control', 'placeholder' => 'Suche', 'autofocus')) !!}
 					<div class="input-group-append">
 						<button type="submit" class="btn btn-primary form-control">
 							<span class="fa fa-search"></span>
@@ -26,18 +26,15 @@
 			</div>
 		</div>
 
-		<div class="card User mb-3">
-			<div class="card-header" id="headingOne">
-				<h5 class="mb-0">
-					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						Benutzer
-					</button>
-				</h5>
-			</div>
-			<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent=".User">
-				<div class="card-body table-responsive">
-					<table id="dataTable" class="table table-hover">
-						<thead>
+		<div class="card mb-3">
+			<div class="card-header">
+				<h5 class="float-left">Benutzer</h5>
+
+                <a href="{{  route('overwatch') }}" class="float-right">Zurück zu Overwatch</a>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
 						<th>
 							Name
 						</th>
@@ -45,13 +42,10 @@
 							E-Mail
 						</th>
 						<th>
-							Abteilung
-						</th>
-						<th>
 							Optionen
 						</th>
-						</thead>
-						<tbody>
+                    </thead>
+                    <tbody>
 						@foreach($users as $user)
 							<tr>
 								<td>
@@ -65,18 +59,14 @@
 									{{ $user->email }}
 								</td>
 								<td>
-									{{ $user->group_name }}
-								</td>
-								<td>
 									<button onclick="location.href='{{ route('edit-users',$user->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
 									<button onclick="location.href='{{ route('destroy-users',$user->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
 								</td>
 							</tr>
 						@endforeach
-						</tbody>
-					</table>
-				</div>
-			</div>
+                    </tbody>
+                </table>
+            </div>
 		</div>
 	</div>
 @endsection

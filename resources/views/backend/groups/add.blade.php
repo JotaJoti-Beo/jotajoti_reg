@@ -8,9 +8,15 @@
             </div>
         @endif
 
+        @if(session()->has('error'))
+            <div class="alert alert-danger">
+                {{ session()->get('error') }}
+            </div>
+        @endif
+
         <div class="card">
             <div class="card-header">
-                <h5 class="float-left">Gruppe bearbeiten</h5>
+                <h5 class="float-left">Neue Gruppe</h5>
 
                 <a href="{{ route('groups') }}" class="float-right">Zurück zu Gruppen</a>
             </div>
@@ -35,9 +41,10 @@
                             </span>
                         @endif
                     </div>
+                </div>
 
-					{!! Form::button('Teilnehmer erstellen', array('class' => 'btn btn-success margin-bottom-1 mb-1 float-right','type' => 'submit' )) !!}
-					{!! Form::close() !!}
+                {!! Form::button('Gruppe erstellen', array('class' => 'btn btn-success margin-bottom-1 mb-1 float-right','type' => 'submit' )) !!}
+                {!! Form::close() !!}
 			</div>
 		</div>
 	</div>

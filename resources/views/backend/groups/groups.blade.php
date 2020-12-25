@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="col-12">
+    <div class="container">
         @if(session()->has('message'))
             <div class="alert alert-success">
                 {{ session()->get('message') }}
             </div>
         @endif
 
-        <div class="card">
+        <div class="card mb-3">
             <div class="card-header">
                 {!! Form::open(array('route' => 'groups', 'method' => 'POST', 'role' => 'form', 'class' => 'needs-validation')) !!}
                 <div class="input-group" id="adv-search">
@@ -25,8 +25,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="clearfix p-3"></div>
 
         <div class="card">
             <div class="card-header">
