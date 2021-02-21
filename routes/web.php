@@ -64,5 +64,8 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::post('/news/update/{eid}', 'Backend\NewsController@update')->name('update-news');
     Route::get('/news/destroy/{eid}', 'Backend\NewsController@destroy')->name('destroy-news');
 
+    Route::any('/admin', 'Backend\NewsController@index')->name('admin');
+    Route::post('/admin/update/{eid}', 'Backend\NewsController@update')->name('update-admin');
+
     Route::resource('profile', 'Backend\ProfileController')->only('index', 'update');
 });
