@@ -24,10 +24,6 @@ class ParticipationsController extends Controller
     {
         if ($request->input('search') == null) {
             $participants = Participant::all();
-
-        /*$participations = DB::table('participant')
-            ->leftJoin('groups', 'groups.id', '=', 'participant.FK_GRP')
-            ->select('participations.*', 'groups.group_name')->get();*/
         } else {
             $search_string = $request->input('search');
             $participants = DB::table('participations')
