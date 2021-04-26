@@ -17,7 +17,7 @@
         "anhskohbo/no-captcha": "3.3.0",
         "elibyy/tcpdf-laravel": "8.1.2",
         "fideloper/proxy": "4.4.1",
-        "fruitcake/laravel-cors": "2.0.3",
+        "fruitcake/laravel-cors": "2.0.4",
         "guzzlehttp/guzzle": "7.3.0",
         "kouz/laravel-airbrake": "0.7.0",
         "laravel/framework": "8.35.1",
