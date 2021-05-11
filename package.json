@@ -10,6 +10,7 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@popperjs/core": "^2.9.2",
         "axios": "0.21.1",
         "bootstrap": "5.0.0",
         "bootstrap-select": "1.13.18",
@@ -20,7 +21,6 @@
         "jquery": "3.6.0",
         "laravel-mix": "6.0.19",
         "lodash": "4.17.21",
-        "popper.js": "1.16.1",
         "postcss": "8.2.15",
         "resolve-url-loader": "4.0.0",
         "sass": "1.32.12",
