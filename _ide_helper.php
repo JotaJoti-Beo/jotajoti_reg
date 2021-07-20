@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 8.47.0.
+ * Generated for Laravel 8.51.0.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1972,7 +1972,7 @@
          *
          * @param string $password
          * @param string $attribute
-         * @return bool|null 
+         * @return \App\Models\User|null 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */ 
@@ -4338,6 +4338,141 @@
             /**
      * 
      *
+     * @see https://carbon.nesbot.com/docs/
+     * @see https://github.com/briannesbitt/Carbon/blob/master/src/Carbon/Factory.php
+     * @method static \Illuminate\Support\Carbon create($year = 0, $month = 1, $day = 1, $hour = 0, $minute = 0, $second = 0, $tz = null)
+     * @method static \Illuminate\Support\Carbon createFromDate($year = null, $month = null, $day = null, $tz = null)
+     * @method static \Illuminate\Support\Carbon createFromTime($hour = 0, $minute = 0, $second = 0, $tz = null)
+     * @method static \Illuminate\Support\Carbon createFromTimeString($time, $tz = null)
+     * @method static \Illuminate\Support\Carbon createFromTimestamp($timestamp, $tz = null)
+     * @method static \Illuminate\Support\Carbon createFromTimestampMs($timestamp, $tz = null)
+     * @method static \Illuminate\Support\Carbon createFromTimestampUTC($timestamp)
+     * @method static \Illuminate\Support\Carbon createMidnightDate($year = null, $month = null, $day = null, $tz = null)
+     * @method static \Illuminate\Support\Carbon disableHumanDiffOption($humanDiffOption)
+     * @method static \Illuminate\Support\Carbon enableHumanDiffOption($humanDiffOption)
+     * @method static \Illuminate\Support\Carbon fromSerialized($value)
+     * @method static \Illuminate\Support\Carbon getLastErrors()
+     * @method static \Illuminate\Support\Carbon getTestNow()
+     * @method static \Illuminate\Support\Carbon instance($date)
+     * @method static \Illuminate\Support\Carbon isMutable()
+     * @method static \Illuminate\Support\Carbon maxValue()
+     * @method static \Illuminate\Support\Carbon minValue()
+     * @method static \Illuminate\Support\Carbon now($tz = null)
+     * @method static \Illuminate\Support\Carbon parse($time = null, $tz = null)
+     * @method static \Illuminate\Support\Carbon setHumanDiffOptions($humanDiffOptions)
+     * @method static \Illuminate\Support\Carbon setTestNow($testNow = null)
+     * @method static \Illuminate\Support\Carbon setUtf8($utf8)
+     * @method static \Illuminate\Support\Carbon today($tz = null)
+     * @method static \Illuminate\Support\Carbon tomorrow($tz = null)
+     * @method static \Illuminate\Support\Carbon useStrictMode($strictModeEnabled = true)
+     * @method static \Illuminate\Support\Carbon yesterday($tz = null)
+     * @method static \Illuminate\Support\Carbon|false createFromFormat($format, $time, $tz = null)
+     * @method static \Illuminate\Support\Carbon|false createSafe($year = null, $month = null, $day = null, $hour = null, $minute = null, $second = null, $tz = null)
+     * @method static \Illuminate\Support\Carbon|null make($var)
+     * @method static \Symfony\Component\Translation\TranslatorInterface getTranslator()
+     * @method static array getAvailableLocales()
+     * @method static array getDays()
+     * @method static array getIsoUnits()
+     * @method static array getWeekendDays()
+     * @method static bool hasFormat($date, $format)
+     * @method static bool hasMacro($name)
+     * @method static bool hasRelativeKeywords($time)
+     * @method static bool hasTestNow()
+     * @method static bool isImmutable()
+     * @method static bool isModifiableUnit($unit)
+     * @method static bool isStrictModeEnabled()
+     * @method static bool localeHasDiffOneDayWords($locale)
+     * @method static bool localeHasDiffSyntax($locale)
+     * @method static bool localeHasDiffTwoDayWords($locale)
+     * @method static bool localeHasPeriodSyntax($locale)
+     * @method static bool localeHasShortUnits($locale)
+     * @method static bool setLocale($locale)
+     * @method static bool shouldOverflowMonths()
+     * @method static bool shouldOverflowYears()
+     * @method static int getHumanDiffOptions()
+     * @method static int getMidDayAt()
+     * @method static int getWeekEndsAt()
+     * @method static int getWeekStartsAt()
+     * @method static mixed executeWithLocale($locale, $func)
+     * @method static string getLocale()
+     * @method static string pluralUnit(string $unit)
+     * @method static string singularUnit(string $unit)
+     * @method static void macro($name, $macro)
+     * @method static void mixin($mixin)
+     * @method static void resetMonthsOverflow()
+     * @method static void resetToStringFormat()
+     * @method static void resetYearsOverflow()
+     * @method static void serializeUsing($callback)
+     * @method static void setMidDayAt($hour)
+     * @method static void setToStringFormat($format)
+     * @method static void setTranslator(\Symfony\Component\Translation\TranslatorInterface $translator)
+     * @method static void setWeekEndsAt($day)
+     * @method static void setWeekStartsAt($day)
+     * @method static void setWeekendDays($days)
+     * @method static void useMonthsOverflow($monthsOverflow = true)
+     * @method static void useYearsOverflow($yearsOverflow = true)
+     */ 
+        class Date {
+                    /**
+         * Use the given handler when generating dates (class name, callable, or factory).
+         *
+         * @param mixed $handler
+         * @return mixed 
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function use($handler)
+        {
+                        return \Illuminate\Support\DateFactory::use($handler);
+        }
+                    /**
+         * Use the default date class when generating dates.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function useDefault()
+        {
+                        \Illuminate\Support\DateFactory::useDefault();
+        }
+                    /**
+         * Execute the given callable on each date creation.
+         *
+         * @param callable $callable
+         * @return void 
+         * @static 
+         */ 
+        public static function useCallable($callable)
+        {
+                        \Illuminate\Support\DateFactory::useCallable($callable);
+        }
+                    /**
+         * Use the given date type (class) when generating dates.
+         *
+         * @param string $dateClass
+         * @return void 
+         * @static 
+         */ 
+        public static function useClass($dateClass)
+        {
+                        \Illuminate\Support\DateFactory::useClass($dateClass);
+        }
+                    /**
+         * Use the given Carbon factory when generating dates.
+         *
+         * @param object $factory
+         * @return void 
+         * @static 
+         */ 
+        public static function useFactory($factory)
+        {
+                        \Illuminate\Support\DateFactory::useFactory($factory);
+        }
+         
+    }
+            /**
+     * 
+     *
      * @see \Illuminate\Database\DatabaseManager
      * @see \Illuminate\Database\Connection
      */ 
@@ -5817,6 +5952,20 @@
                         $instance->replace($path, $content);
         }
                     /**
+         * Replace a given string within a given file.
+         *
+         * @param array|string $search
+         * @param array|string $replace
+         * @param string $path
+         * @return void 
+         * @static 
+         */ 
+        public static function replaceInFile($search, $replace, $path)
+        {
+                        /** @var \Illuminate\Filesystem\Filesystem $instance */
+                        $instance->replaceInFile($search, $replace, $path);
+        }
+                    /**
          * Prepend to a file.
          *
          * @param string $path
@@ -7259,6 +7408,8 @@
             /**
      * 
      *
+     * @method static \Illuminate\Log\Logger withContext(array $context = [])
+     * @method static \Illuminate\Log\Logger withoutContext()
      * @method static void write(string $level, string $message, array $context = [])
      * @method static void listen(\Closure $callback)
      * @see \Illuminate\Log\Logger
@@ -8673,6 +8824,126 @@
         {            //Method inherited from \Illuminate\Queue\Queue         
                         /** @var \Illuminate\Queue\SyncQueue $instance */
                         $instance->setContainer($container);
+        }
+         
+    }
+            /**
+     * 
+     *
+     * @see \Illuminate\Cache\RateLimiter
+     */ 
+        class RateLimiter {
+                    /**
+         * Register a named limiter configuration.
+         *
+         * @param string $name
+         * @param \Closure $callback
+         * @return \Illuminate\Cache\RateLimiter 
+         * @static 
+         */ 
+        public static function for($name, $callback)
+        {
+                        /** @var \Illuminate\Cache\RateLimiter $instance */
+                        return $instance->for($name, $callback);
+        }
+                    /**
+         * Get the given named rate limiter.
+         *
+         * @param string $name
+         * @return \Closure 
+         * @static 
+         */ 
+        public static function limiter($name)
+        {
+                        /** @var \Illuminate\Cache\RateLimiter $instance */
+                        return $instance->limiter($name);
+        }
+                    /**
+         * Determine if the given key has been "accessed" too many times.
+         *
+         * @param string $key
+         * @param int $maxAttempts
+         * @return bool 
+         * @static 
+         */ 
+        public static function tooManyAttempts($key, $maxAttempts)
+        {
+                        /** @var \Illuminate\Cache\RateLimiter $instance */
+                        return $instance->tooManyAttempts($key, $maxAttempts);
+        }
+                    /**
+         * Increment the counter for a given key for a given decay time.
+         *
+         * @param string $key
+         * @param int $decaySeconds
+         * @return int 
+         * @static 
+         */ 
+        public static function hit($key, $decaySeconds = 60)
+        {
+                        /** @var \Illuminate\Cache\RateLimiter $instance */
+                        return $instance->hit($key, $decaySeconds);
+        }
+                    /**
+         * Get the number of attempts for the given key.
+         *
+         * @param string $key
+         * @return mixed 
+         * @static 
+         */ 
+        public static function attempts($key)
+        {
+                        /** @var \Illuminate\Cache\RateLimiter $instance */
+                        return $instance->attempts($key);
+        }
+                    /**
+         * Reset the number of attempts for the given key.
+         *
+         * @param string $key
+         * @return mixed 
+         * @static 
+         */ 
+        public static function resetAttempts($key)
+        {
+                        /** @var \Illuminate\Cache\RateLimiter $instance */
+                        return $instance->resetAttempts($key);
+        }
+                    /**
+         * Get the number of retries left for the given key.
+         *
+         * @param string $key
+         * @param int $maxAttempts
+         * @return int 
+         * @static 
+         */ 
+        public static function retriesLeft($key, $maxAttempts)
+        {
+                        /** @var \Illuminate\Cache\RateLimiter $instance */
+                        return $instance->retriesLeft($key, $maxAttempts);
+        }
+                    /**
+         * Clear the hits and lockout timer for the given key.
+         *
+         * @param string $key
+         * @return void 
+         * @static 
+         */ 
+        public static function clear($key)
+        {
+                        /** @var \Illuminate\Cache\RateLimiter $instance */
+                        $instance->clear($key);
+        }
+                    /**
+         * Get the number of seconds until the "key" is accessible again.
+         *
+         * @param string $key
+         * @return int 
+         * @static 
+         */ 
+        public static function availableIn($key)
+        {
+                        /** @var \Illuminate\Cache\RateLimiter $instance */
+                        return $instance->availableIn($key);
         }
          
     }
@@ -10608,13 +10879,14 @@
          *
          * @param string $key
          * @param callable $callback
+         * @param callable|null $default
          * @return $this|mixed 
          * @static 
          */ 
-        public static function whenHas($key, $callback)
+        public static function whenHas($key, $callback, $default = null)
         {
                         /** @var \Illuminate\Http\Request $instance */
-                        return $instance->whenHas($key, $callback);
+                        return $instance->whenHas($key, $callback, $default);
         }
                     /**
          * Determine if the request contains a non-empty value for an input item.
@@ -10657,13 +10929,14 @@
          *
          * @param string $key
          * @param callable $callback
+         * @param callable|null $default
          * @return $this|mixed 
          * @static 
          */ 
-        public static function whenFilled($key, $callback)
+        public static function whenFilled($key, $callback, $default = null)
         {
                         /** @var \Illuminate\Http\Request $instance */
-                        return $instance->whenFilled($key, $callback);
+                        return $instance->whenFilled($key, $callback, $default);
         }
                     /**
          * Determine if the request is missing a given input item key.
@@ -13145,6 +13418,18 @@
                         return $instance->cloud();
         }
                     /**
+         * Build an on-demand disk.
+         *
+         * @param string|array $config
+         * @return \Illuminate\Filesystem\FilesystemAdapter 
+         * @static 
+         */ 
+        public static function build($config)
+        {
+                        /** @var \Illuminate\Filesystem\FilesystemManager $instance */
+                        return $instance->build($config);
+        }
+                    /**
          * Create an instance of the local driver.
          *
          * @param array $config
@@ -13706,6 +13991,56 @@
         {
                         /** @var \Illuminate\Filesystem\FilesystemAdapter $instance */
                         return $instance->getDriver();
+        }
+                    /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param object|callable $macro
+         * @return void 
+         * @static 
+         */ 
+        public static function macro($name, $macro)
+        {
+                        \Illuminate\Filesystem\FilesystemAdapter::macro($name, $macro);
+        }
+                    /**
+         * Mix another object into the class.
+         *
+         * @param object $mixin
+         * @param bool $replace
+         * @return void 
+         * @throws \ReflectionException
+         * @static 
+         */ 
+        public static function mixin($mixin, $replace = true)
+        {
+                        \Illuminate\Filesystem\FilesystemAdapter::mixin($mixin, $replace);
+        }
+                    /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */ 
+        public static function hasMacro($name)
+        {
+                        return \Illuminate\Filesystem\FilesystemAdapter::hasMacro($name);
+        }
+                    /**
+         * Dynamically handle calls to the class.
+         *
+         * @param string $method
+         * @param array $parameters
+         * @return mixed 
+         * @throws \BadMethodCallException
+         * @static 
+         */ 
+        public static function macroCall($method, $parameters)
+        {
+                        /** @var \Illuminate\Filesystem\FilesystemAdapter $instance */
+                        return $instance->macroCall($method, $parameters);
         }
          
     }
@@ -14286,6 +14621,17 @@
         {
                         /** @var \Illuminate\Validation\Factory $instance */
                         $instance->replacer($rule, $replacer);
+        }
+                    /**
+         * Indicate that unvalidated array keys should be excluded, even if the parent array was validated.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function excludeUnvalidatedArrayKeys()
+        {
+                        /** @var \Illuminate\Validation\Factory $instance */
+                        $instance->excludeUnvalidatedArrayKeys();
         }
                     /**
          * Set the Validator instance resolver.
@@ -17487,6 +17833,7 @@ namespace  {
             class Config extends \Illuminate\Support\Facades\Config {}
             class Cookie extends \Illuminate\Support\Facades\Cookie {}
             class Crypt extends \Illuminate\Support\Facades\Crypt {}
+            class Date extends \Illuminate\Support\Facades\Date {}
             class DB extends \Illuminate\Support\Facades\DB {}
             class Eloquent extends \Illuminate\Database\Eloquent\Model {             
                 /**
@@ -17603,7 +17950,7 @@ namespace  {
              * @param mixed $operator
              * @param mixed $value
              * @param string $boolean
-             * @return \Illuminate\Database\Eloquent\Model|static 
+             * @return \Illuminate\Database\Eloquent\Model|static|null 
              * @static 
              */ 
             public static function firstWhere($column, $operator = null, $value = null, $boolean = 'and')
@@ -17939,9 +18286,8 @@ namespace  {
              * @param int|null $perPage
              * @param array $columns
              * @param string $cursorName
-             * @param string|null $cursor
+             * @param \Illuminate\Pagination\Cursor|string|null $cursor
              * @return \Illuminate\Contracts\Pagination\CursorPaginator 
-             * @throws \Illuminate\Pagination\CursorPaginationException
              * @static 
              */ 
             public static function cursorPaginate($perPage = null, $columns = [], $cursorName = 'cursor', $cursor = null)
@@ -18753,7 +19099,7 @@ namespace  {
              * @param mixed $value
              * @param callable $callback
              * @param callable|null $default
-             * @return mixed 
+             * @return $this|mixed 
              * @static 
              */ 
             public static function when($value, $callback, $default = null)
@@ -18768,7 +19114,7 @@ namespace  {
              * @param mixed $value
              * @param callable $callback
              * @param callable|null $default
-             * @return mixed 
+             * @return $this|mixed 
              * @static 
              */ 
             public static function unless($value, $callback, $default = null)
@@ -18864,6 +19210,7 @@ namespace  {
                 /**
              * Force the query to only return distinct results.
              *
+             * @param mixed $distinct
              * @return \Illuminate\Database\Query\Builder 
              * @static 
              */ 
@@ -19296,7 +19643,7 @@ namespace  {
                 /**
              * Add an "or where null" clause to the query.
              *
-             * @param string $column
+             * @param string|array $column
              * @return \Illuminate\Database\Query\Builder 
              * @static 
              */ 
@@ -19974,7 +20321,7 @@ namespace  {
                 /**
              * Add a descending "order by" clause to the query.
              *
-             * @param string $column
+             * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Query\Expression|string $column
              * @return \Illuminate\Database\Query\Builder 
              * @static 
              */ 
@@ -20110,7 +20457,7 @@ namespace  {
                 /**
              * Remove all existing orders and optionally add a new order.
              *
-             * @param string|null $column
+             * @param \Closure|\Illuminate\Database\Query\Builder|\Illuminate\Database\Query\Expression|string|null $column
              * @param string $direction
              * @return \Illuminate\Database\Query\Builder 
              * @static 
@@ -20717,6 +21064,7 @@ namespace  {
             class Notification extends \Illuminate\Support\Facades\Notification {}
             class Password extends \Illuminate\Support\Facades\Password {}
             class Queue extends \Illuminate\Support\Facades\Queue {}
+            class RateLimiter extends \Illuminate\Support\Facades\RateLimiter {}
             class Redirect extends \Illuminate\Support\Facades\Redirect {}
             class Request extends \Illuminate\Support\Facades\Request {}
             class Response extends \Illuminate\Support\Facades\Response {}
