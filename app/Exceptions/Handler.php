@@ -2,7 +2,6 @@
 
 namespace App\Exceptions;
 
-use App;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -23,41 +22,20 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontFlash = [
+        'current_password',
         'password',
         'password_confirmation',
     ];
 
     /**
-     * Report or log an exception.
+     * Register the exception handling callbacks for the application.
      *
-     * @param  \Throwable  $exception
      * @return void
-     *
-     * @throws \Exception
      */
-    public function report(Throwable $exception)
+    public function register()
     {
-        if (App::environment('production')) {
-            if ($this->shouldReport($exception)) {
-                $airbrakeNotifier = \App::make('Airbrake\Notifier');
-                $airbrakeNotifier->notify($exception);
-            }
-        }
-
-        parent::report($exception);
-    }
-
-    /**
-     * Render an exception into an HTTP response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Throwable  $exception
-     * @return \Symfony\Component\HttpFoundation\Response
-     *
-     * @throws \Throwable
-     */
-    public function render($request, Throwable $exception)
-    {
-        return parent::render($request, $exception);
+        $this->reportable(function (Throwable $e) {
+            //
+        });
     }
 }
