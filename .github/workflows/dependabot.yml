@@ -1,4 +1,4 @@
-name: Fetch Metadata from Dependabot PRs
+ - name: Fetch Metadata from Dependabot PRs
   # You may pin to the exact commit or the version.
   # uses: dependabot/fetch-metadata@a3e5f86ae9f2f49b441498973ddec20035d326b8
   uses: dependabot/fetch-metadata@v1.1.1
