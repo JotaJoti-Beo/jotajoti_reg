@@ -32,3 +32,4 @@
 - [ ] Startdatum für die Anmeldung
 - [ ] MD-Template für die Bediungen
 - [ ] Tooltips im Frontend-Formular --> (i) --> Gib deinen Namen ein...
+- [ ] Ev. Vorgängiges Registrieren der Daten, später nur noch Anmelden
