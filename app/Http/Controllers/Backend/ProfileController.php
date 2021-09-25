@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Controllers;
 
 class ProfileController extends Controller
 {
-    public function index(Request $request){
+    public function index()
+    {
+        return view('backend.profile.index');
+    }
 
+    public function update()
+    {
+        return redirect()->back();
     }
 }
