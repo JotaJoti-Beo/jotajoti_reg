@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Frontend\RegisterController@index')->name('public');
+Route::get('/home', [Frontend\RegisterController::class, 'index'])->name('home');
 
 Auth::routes(['register' => false]);
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::redirect('/', '/admin/overwatch', 301);
-    Route::get('/overwatch', 'Backend\OverwatchController@index')->name('overwatch');
+    Route::get('/overwatch', [Backend\OverwatchController::class, 'index'])->name('home');
 
-    Route::any('/users', 'Backend\UsersController@index')->name('users');
+    Route::any('/users', [Backend\UsersController::class, 'index'])->name('users');
     Route::get('/users/add', 'Backend\UsersController@create')->name('add-users');
     Route::post('/users/store', 'Backend\UsersController@store')->name('store-users');
     Route::get('/users/edit/{uid}', 'Backend\UsersController@edit')->name('edit-users');
