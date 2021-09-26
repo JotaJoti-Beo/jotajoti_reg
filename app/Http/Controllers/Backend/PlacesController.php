@@ -30,13 +30,13 @@ class PlacesController extends Controller
             $places = Place::where()->orWhere();
         }
 
-        return view('backend.places.places', ['places' => $places]);
+        return view('backend.places.index', ['places' => $places]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Application|Factory|\Illuminate\Contracts\View\View|Response
+     * @return Application|Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
@@ -66,7 +66,7 @@ class PlacesController extends Controller
      *
      * @param $gid
      *
-     * @return Application|Factory|View|Response
+     * @return Application|Factory|\Illuminate\Contracts\View\View
      */
     public function edit($gid)
     {
