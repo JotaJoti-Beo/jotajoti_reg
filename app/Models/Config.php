@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model
+class Config extends Model
 {
-    protected $table = 'admin';
+    protected $table = 'config';
 
     protected $fillable = [
         'reg_start',
