@@ -35,13 +35,13 @@ class UsersController extends Controller
                 ->orWhere('first_name', 'LIKE', "%$search_string%")->get();
         }
 
-        return view('backend.users.users', ['users' => $users]);
+        return view('backend.users.index', ['users' => $users]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Application|Factory|Response|View
+     * @return Application|Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
@@ -67,10 +67,9 @@ class UsersController extends Controller
 
         if ($password != null && $password === $password_repeat) {
             $password = Hash::make($password);
-
             $password_repeat = null;
 
-            $user = User::create([
+            User::create([
                 'scout_name' => $scout_name,
                 'first_name' => $first_name,
                 'last_name' => $last_name,
@@ -89,7 +88,7 @@ class UsersController extends Controller
      *
      * @param $uid
      *
-     * @return Application|Factory|Response|View
+     * @return Application|Factory|\Illuminate\Contracts\View\View
      */
     public function edit($uid)
     {
@@ -118,10 +117,9 @@ class UsersController extends Controller
 
         if ($password != null && $password === $password_repeat) {
             $password = Hash::make($password);
-
             $password_repeat = null;
 
-            $user = User::find($uid)->update([
+            User::find($uid)->update([
                 'scout_name' => $scout_name,
                 'first_name' => $first_name,
                 'last_name' => $last_name,
@@ -131,7 +129,12 @@ class UsersController extends Controller
 
             return redirect()->back()->with('message', 'Benutzer wurde aktualisiert.');
         } elseif ($password == null) {
-            DB::table('users')->where('id', '=', $uid)->update(['scout_name' => $scout_name, 'first_name' => $first_name, 'last_name' => $last_name, 'email' => $email]);
+            User::find($uid)->update([
+                'scout_name' => $scout_name,
+                'first_name' => $first_name,
+                'last_name' => $last_name,
+                'email' => $email,
+            ]);
 
             return redirect()->back()->with('message', 'Benutzer wurde aktualisiert. Das Passwort wurde beibehalten!');
         } else {
@@ -148,7 +151,7 @@ class UsersController extends Controller
      */
     public function destroy($uid)
     {
-        DB::table('users')->where('id', '=', $uid)->delete();
+        User::destroy($uid);
 
         return redirect()->back()->with('message', 'Benutzer erfolgreich gelöscht.');
     }

@@ -104,7 +104,7 @@
                     {!! Form::label('password', 'Passwort', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::password('password', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Passwort', 'required')) !!}
+                            {!! Form::password('password', array('id' => 'password', 'class' => 'form-control', 'placeholder' => 'Passwort')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="password">
                                     <i class="fa fa-key" aria-hidden="true"></i>
@@ -123,7 +123,7 @@
                     {!! Form::label('password_repeat', 'Passwort wiederholen', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::password('password_repeat', array('id' => 'password_repeat', 'class' => 'form-control', 'placeholder' => 'Passwort wiederholen', 'required')) !!}
+                            {!! Form::password('password_repeat', array('id' => 'password_repeat', 'class' => 'form-control', 'placeholder' => 'Passwort wiederholen')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="password_repeat">
                                     <i class="fa fa-key" aria-hidden="true"></i>
