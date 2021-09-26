@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Group;
 use App\Models\Participant;
 use DB;
 use Illuminate\Contracts\Foundation\Application;
@@ -36,7 +37,7 @@ class ParticipationsController extends Controller
                 ->orWhere('barcode', 'LIKE', "%$search_string%")->get();
         }
 
-        return view('backend.participations.participations', ['participations' => $participants]);
+        return view('backend.participations.index', ['participations' => $participants]);
     }
 
     /**
@@ -69,14 +70,6 @@ class ParticipationsController extends Controller
         $birthday = $request->input('birthday');
         $gender = $request->input('gender');
         $group = $request->input('group');
-        $barcode = Helper::generateBarcode();
-
-        if ($request->file('tn_img')) {
-            $img_name = 'tnimg_'.time().'.'.$request->file('tn_img')->extension();
-            $request->file('tn_img')->move(storage_path('app/public/img'), $img_name);
-        } else {
-            $img_name = null;
-        }
 
         if ($gender) {
             if ($gender == 'm') {
@@ -96,66 +89,15 @@ class ParticipationsController extends Controller
             'scout_name' => $scout_name,
             'first_name' => $first_name,
             'last_name' => $last_name,
-            'barcode' => $barcode,
             'address' => $address,
             'plz' => $plz,
             'place' => $place,
             'birthday' => $birthday,
             'gender' => $gender,
             'FK_GRP' => $group,
-            'person_picture' => $img_name,
         ]);
 
         return redirect()->back()->with('message', 'Teilnehmer wurde erstellt.');
-    }
-
-    /**
-     * @param Request $request
-     * @return RedirectResponse
-     */
-    public function import(Request $request)
-    {
-        if ($request->file('participations_list')) {
-            $participations_list = $request->file('participations_list')->move(storage_path('temp/csv'), 'participations.csv');
-        } else {
-            return redirect()->back()->with('error', 'Die Teilnehmer konnten nicht importiert werden, da keine entsprehende Datei gesendet wurde.');
-        }
-
-        $contents = read_csv_file($participations_list);
-
-        foreach ($contents as $content) {
-            if ($content[0] == 'Vorname' || $content[0] == 'Nachname' || $content[0] == 'Pfadiname') {
-                unset($content);
-            } else {
-                if (! empty($content[6])) {
-                    if ($content[6][0] == 'm') {
-                        $gnd = 'Männlich';
-                    } elseif ($content[6][0] == 'w') {
-                        $gnd = 'Weiblich';
-                    } elseif ($content[6][0] == 'u') {
-                        $gnd = 'Anderes';
-                    } else {
-                        $gnd = null;
-                    }
-                } else {
-                    $gnd = null;
-                }
-
-                if (! empty($content[7])) {
-                    $carbon_birthday = Carbon::createFromFormat('d.m.Y', $content[7]);
-                    $birthday = $carbon_birthday->format('Y-m-d');
-                } else {
-                    $birthday = '01.01.2000';
-                }
-
-                $barcode = Helper::generateBarcode();
-
-                isset($content[8]) ? $grp = DB::table('groups')->select('id')->where('group_name', 'LIKE', "%$content[8]%")->first() : $grp = null;
-                DB::table('participations')->insert(['first_name' => utf8_encode($content[0]), 'last_name' => utf8_encode($content[1]), 'scout_name' => utf8_encode($content[2]), 'address' => utf8_encode($content[3]), 'plz' => $content[4], 'place' => utf8_encode($content[5]), 'gender' => $gnd, 'birthday' => $birthday, 'FK_GRP' => $grp, 'barcode' => $barcode]);
-            }
-        }
-
-        return redirect()->back()->with('message', 'Die TN wurden importiert!');
     }
 
     /**
@@ -167,10 +109,10 @@ class ParticipationsController extends Controller
      */
     public function edit($pid)
     {
-        $participations = DB::table('participations')->where('id', '=', $pid)->first();
-        $groups = DB::table('groups')->select('groups.id', 'groups.group_name')->get();
+        $participant = Participant::where('id', '=', $pid)->first();
+        $groups = Group::all();
 
-        return view('participations.edit', ['participations' => $participations, 'groups' => $groups]);
+        return view('participations.edit', ['participant' => $participant, 'groups' => $groups]);
     }
 
     /**
@@ -179,7 +121,7 @@ class ParticipationsController extends Controller
      * @param Request $request
      * @param                          $pid
      *
-     * @return Response
+     * @return RedirectResponse
      */
     public function update(Request $request, $pid)
     {
@@ -192,7 +134,6 @@ class ParticipationsController extends Controller
         $birthday = $request->input('birthday');
         $gender = $request->input('gender');
         $group = $request->input('group');
-        $barcode = $request->input('barcode');
 
         if ($gender) {
             if ($gender == 'm') {
@@ -208,27 +149,16 @@ class ParticipationsController extends Controller
             $gender = null;
         }
 
-        if ($request->file('tn_img')) {
-            $img_name = 'tnimg_'.time().'.'.$request->file('tn_img')->extension();
-            $request->file('tn_img')->move(storage_path('app/public/img'), $img_name);
-        } else {
-            $img_name = null;
-        }
-
         $participant = Participant::find($pid);
         $participant->scout_name = $scout_name;
         $participant->first_name = $first_name;
         $participant->last_name = $last_name;
-        $participant->barcode = $barcode;
         $participant->address = $address;
         $participant->plz = $plz;
         $participant->place = $place;
         $participant->birthday = $birthday;
         $participant->gender = $gender;
         $participant->FK_GRP = $group;
-        if ($img_name != null) {
-            $participant->person_picture = $img_name;
-        }
 
         $participant->save();
 
@@ -240,11 +170,11 @@ class ParticipationsController extends Controller
      *
      * @param $uid
      *
-     * @return Response
+     * @return RedirectResponse
      */
     public function destroy($uid)
     {
-        DB::table('participations')->where('id', '=', $uid)->delete();
+        Participant::destroy($uid);
 
         return redirect()->back()->with('message', 'Teilnehmer erfolgreich gelöscht.');
     }
