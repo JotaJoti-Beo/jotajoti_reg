@@ -19,25 +19,23 @@ class GroupsController extends Controller
      *
      * @param Request $request
      *
-     * @return Application|Factory|View|Response
+     * @return Application|Factory|View
      */
     public function index(Request $request){
         if($request->input('search' == null)){
             $groups = Group::all();
         } else {
             $search_string = $request->input('search');
-            $groups = DB::table('groups')
-                ->select('groups.*')
-                ->where('groups.group_name', 'LIKE', "%$search_string%")->get();
+            $groups = Group::where('groups.name', 'LIKE', "%$search_string%");
         }
 
-        return view('backend.groups.groups', ['groups' => $groups]);
+        return view('backend.groups.index', ['groups' => $groups]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return Application|Factory|View|Response
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -56,7 +54,7 @@ class GroupsController extends Controller
         $group_name = $request->input('group_name');
 
         DB::table('groups')->insert([
-            'group_name' => $group_name,
+            'name' => $group_name,
         ]);
 
         return redirect()->back()->with('message', 'Gruppe wurde erstellt.');
@@ -67,7 +65,7 @@ class GroupsController extends Controller
      *
      * @param $gid
      *
-     * @return Application|Factory|View|Response
+     * @return Application|Factory|View
      */
     public function edit($gid)
     {
