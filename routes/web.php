@@ -27,7 +27,7 @@ Auth::routes(['register' => false]);
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::redirect('/', '/admin/overwatch', 301);
-    Route::get('/overwatch', [OverwatchController::class, 'index'])->name('home');
+    Route::get('/overwatch', [OverwatchController::class, 'index'])->name('overwatch');
 
     Route::any('/users', [UsersController::class, 'index'])->name('users');
     Route::get('/users/add', [UsersController::class, 'create'])->name('add-users');
@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::post('/places/update/{eid}', [PlacesController::class, 'update'])->name('update-places');
     Route::get('/places/destroy/{eid}', [PlacesController::class, 'destroy'])->name('destroy-places');
 
-    Route::resource('admin', AdminController::class)->only('index', 'update');
+    Route::resource('config', AdminController::class)->only('index', 'update');
 
     Route::resource('profile', ProfileController::class)->only('index', 'update');
 });
