@@ -27,10 +27,13 @@ class GroupsSeeder extends Seeder
         ];
 
         foreach ($groups_container as $group_name) {
-            $group = Group::where('group_name', '=', $group_name)->first();
+            $group = Group::where('name', '=', $group_name)->first();
 
             if ($group == null) {
-                $group = Group::create(['group_name' => $group_name]);
+                $group = Group::create([
+                    'name' => $group_name,
+                    'quota' => 30
+                ]);
                 $group->save();
             }
         }

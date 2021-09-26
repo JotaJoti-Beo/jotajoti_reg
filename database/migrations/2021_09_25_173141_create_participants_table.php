@@ -24,12 +24,9 @@ class CreateParticipantsTable extends Migration
 
             $table->string('parent_first_name');
             $table->string('parent_last_name');
+
             $table->string('parent_phone');
             $table->string('parent_mail');
-
-            $table->foreignId('place_id');
-
-            $table->foreignId('place_id');
 
             $table->foreignId('place_id');
 
@@ -44,13 +41,12 @@ class CreateParticipantsTable extends Migration
 
             $table->boolean('bring_laptop')->default(false);
             $table->boolean('photos_allowed')->default(false);
-
             $table->boolean('accept_agb')->default(false);
 
             $table->uuid('uuid');
             $table->uuid('reference');
 
-            $table->boolean('isOnHold')->default(false);
+            $table->boolean('isWaitingList')->default(false);
 
             $table->timestamps();
         });

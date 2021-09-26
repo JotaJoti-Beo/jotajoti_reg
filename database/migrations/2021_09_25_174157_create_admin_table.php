@@ -17,6 +17,7 @@ class CreateAdminTable extends Migration
             $table->id();
             $table->date('reg_start')->nullable();
             $table->date('jojo_start')->nullable();
+            $table->date('jojo_start_pio')->nullable();
             $table->date('jojo_end')->nullable();
             $table->integer('max_tn');
             $table->timestamps();
