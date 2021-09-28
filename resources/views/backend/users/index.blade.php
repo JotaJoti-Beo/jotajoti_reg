@@ -50,7 +50,7 @@
 							<tr>
 								<td>
 									@if($user->scout_name)
-										{{ $user->scout_name }} / {{ $user->first_name }} {{ $user->last_name }}
+                                        {{ $user->first_name }} {{ $user->last_name }} / {{ $user->scout_name }}
 									@else
 										{{ $user->first_name }} {{ $user->last_name }}
 									@endif
@@ -59,8 +59,8 @@
 									{{ $user->email }}
 								</td>
 								<td>
-									<button onclick="location.href='{{ route('edit-users',$user->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
-									<button onclick="location.href='{{ route('destroy-users',$user->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
+									<button onclick="location.href='{{ route('edit-users', $user->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
+									<button onclick="location.href='{{ route('destroy-users', $user->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
 								</td>
 							</tr>
 						@endforeach
