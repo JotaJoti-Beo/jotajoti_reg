@@ -40,8 +40,8 @@
                                 Orte
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item {{ Request::is('admin/admin/')}}" href="{{ url('/admin/admin') }}">
-                                Administration
+                            <a class="dropdown-item {{ Request::is('admin/config/')}}" href="{{ url('/admin/config') }}">
+                                Konfiguration
                             </a>
                         </div>
                     </li>
