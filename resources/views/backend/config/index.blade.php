@@ -8,14 +8,6 @@
             </div>
         @endif
 
-        <div class="card mb-3">
-            <div class="card-header">
-                <div class="input-group" id="adv-search">
-                    <button onclick="location.href='{{ route('edit-config') }}'" type="button" class="btn btn-primary form-control mt-2">Neue Gruppe</button>
-                </div>
-            </div>
-        </div>
-
         <div class="card">
             <div class="card-header">
                 <h5 class="float-left">Alle Gruppen</h5>
@@ -26,17 +18,17 @@
                 <table class="table table-hover">
                     <thead>
                     <th>
-                        Abteilung
+                        Reg-Datum
                     </th>
                     <th>
                         Optionen
                     </th>
                     </thead>
                     <tbody>
-                    @foreach($admin as $conf)
+                    @foreach($config as $entry)
                         <tr>
                             <td>
-
+                                {{ $entry->reg_start }}
                             </td>
                             <td>
                                 <button onclick="location.href='{{ route('',$group->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
