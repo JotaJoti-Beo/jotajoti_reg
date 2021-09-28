@@ -22,15 +22,14 @@ class UsersController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->search == null) {
+        if ($request->input("search") == null) {
             $users = User::all();
         } else {
             $search_string = $request->input('search');
-            $users = User::where('scout_name', 'LIKE', "%$search_string%")
-                            ->orWhere('last_name', 'LIKE', "%$search_string%")
-                            ->orWhere('first_name', 'LIKE', "%$search_string%");
-
-            print_r($users);
+            $users = User::where("scout_name", "LIKE", "%$search_string%")
+                            ->orWhere("first_name", "LIKE", "%$search_string%")
+                            ->orWhere("last_name", "LIKE", "%$search_string%")
+                            ->get();
         }
 
         return view('backend.users.index', ['users' => $users]);
@@ -53,7 +52,7 @@ class UsersController extends Controller
      *
      * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $scout_name = $request->input('scout_name');
         $first_name = $request->input('first_name');
@@ -103,7 +102,7 @@ class UsersController extends Controller
      *
      * @return RedirectResponse
      */
-    public function update(Request $request, $uid)
+    public function update(Request $request, $uid): RedirectResponse
     {
         $scout_name = $request->input('scout_name');
         $first_name = $request->input('first_name');
@@ -147,7 +146,8 @@ class UsersController extends Controller
      *
      * @return RedirectResponse
      */
-    public function destroy($uid): RedirectResponse{
+    public function destroy($uid): RedirectResponse
+    {
         User::destroy($uid);
 
         return redirect()->back()->with('message', 'Benutzer erfolgreich gelöscht.');
