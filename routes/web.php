@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\ConfigController;
 use App\Http\Controllers\Backend\GroupsController;
 use App\Http\Controllers\Backend\OverwatchController;
 use App\Http\Controllers\Backend\ParticipationsController;
@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::post('/places/update/{eid}', [PlacesController::class, 'update'])->name('update-places');
     Route::get('/places/destroy/{eid}', [PlacesController::class, 'destroy'])->name('destroy-places');
 
-    Route::resource('config', AdminController::class)->only('index', 'update');
+    Route::resource('config', ConfigController::class)->only('index', 'update');
 
     Route::resource('profile', ProfileController::class)->only('index', 'update');
 });
