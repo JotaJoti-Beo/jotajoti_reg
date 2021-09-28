@@ -4,14 +4,12 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use DB;
 use Hash;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\View\View;
 
 class UsersController extends Controller
 {
@@ -20,19 +18,19 @@ class UsersController extends Controller
      *
      * @param Request $request
      *
-     * @return Application|Factory|Response|View
+     * @return Application|Factory|View
      */
     public function index(Request $request)
     {
-        if ($request->input('search') == null) {
+        if ($request->search == null) {
             $users = User::all();
         } else {
             $search_string = $request->input('search');
-            $users = DB::table('users')
-                ->select('users.*')
-                ->where('scout_name', 'LIKE', "%$search_string%")
-                ->orWhere('last_name', 'LIKE', "%$search_string%")
-                ->orWhere('first_name', 'LIKE', "%$search_string%")->get();
+            $users = User::where('scout_name', 'LIKE', "%$search_string%")
+                            ->orWhere('last_name', 'LIKE', "%$search_string%")
+                            ->orWhere('first_name', 'LIKE', "%$search_string%");
+
+            print_r($users);
         }
 
         return view('backend.users.index', ['users' => $users]);
@@ -41,7 +39,7 @@ class UsersController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Application|Factory|\Illuminate\Contracts\View\View
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -88,7 +86,7 @@ class UsersController extends Controller
      *
      * @param $uid
      *
-     * @return Application|Factory|\Illuminate\Contracts\View\View
+     * @return Application|Factory|View
      */
     public function edit($uid)
     {
@@ -149,8 +147,7 @@ class UsersController extends Controller
      *
      * @return RedirectResponse
      */
-    public function destroy($uid)
-    {
+    public function destroy($uid): RedirectResponse{
         User::destroy($uid);
 
         return redirect()->back()->with('message', 'Benutzer erfolgreich gelöscht.');
