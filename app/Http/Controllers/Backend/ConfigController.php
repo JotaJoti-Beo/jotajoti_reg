@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Models\Config;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class ConfigController extends Controller
 {
     public function index()
     {
-        $admin = Config::all();
+        $config = Config::all();
 
-        return view('backend.config.index', ['config' => $admin]);
+        return view('backend.config.index', ['config' => $config]);
     }
 }
