@@ -59,5 +59,6 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
 
     Route::resource('config', ConfigController::class)->only('index', 'update');
 
-    Route::resource('profile', ProfileController::class)->only('index', 'update');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/profile/update', [ProfileController::class, 'update'])->name('update-profile');
 });
