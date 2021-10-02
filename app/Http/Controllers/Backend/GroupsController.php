@@ -22,11 +22,11 @@ class GroupsController extends Controller
      * @return Application|Factory|View
      */
     public function index(Request $request){
-        if($request->input('search' == null)){
+        if($request->input('search')  == null){
             $groups = Group::all();
         } else {
             $search_string = $request->input('search');
-            $groups = Group::where('groups.name', 'LIKE', "%$search_string%");
+            $groups = Group::where('name', 'LIKE', "%$search_string%")->get();
         }
 
         return view('backend.groups.index', ['groups' => $groups]);
@@ -51,10 +51,12 @@ class GroupsController extends Controller
      */
     public function store(Request $request)
     {
-        $group_name = $request->input('group_name');
+        $name = $request->input('name');
+        $quota = $request->input('quota');
 
-        DB::table('groups')->insert([
-            'name' => $group_name,
+        Group::create([
+            'name' => $name,
+            'quota' => $quota,
         ]);
 
         return redirect()->back()->with('message', 'Gruppe wurde erstellt.');
@@ -69,9 +71,9 @@ class GroupsController extends Controller
      */
     public function edit($gid)
     {
-        $groups = DB::table('groups')->where('id', '=', $gid)->first();
+        $group = Group::find($gid);
 
-        return view('backend.groups.edit', ['groups' => $groups]);
+        return view('backend.groups.edit', ['group' => $group]);
     }
 
     /**
@@ -84,13 +86,15 @@ class GroupsController extends Controller
      */
     public function update(Request $request, $gid)
     {
-        $group_name = $request->input('group_name');
+        $name = $request->input('name');
+        $quota = $request->input('quota');
 
         $group = Group::find($gid);
-        $group->group_name = $group_name;
+        $group->name = $name;
+        $group->quota = $quota;
         $group->save();
 
-        return redirect()->back()->with('message', 'Gruppe wurde aktualisiert.');
+        return redirect()->back()->with('message', 'Die Gruppe wurde aktualisiert.');
     }
 
     /**
@@ -102,7 +106,7 @@ class GroupsController extends Controller
      */
     public function destroy($gid)
     {
-        DB::table('groups')->where('id', '=', $gid)->delete();
+        Group::destroy($gid);
 
         return redirect()->back()->with('message', 'Gruppe erfolgreich gelöscht.');
     }
