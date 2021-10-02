@@ -38,6 +38,9 @@
 						<th>
 							Abteilung
 						</th>
+                        <th>
+                            Quota
+                        </th>
 						<th>
 							Optionen
 						</th>
@@ -46,8 +49,11 @@
 						@foreach($groups as $group)
 							<tr>
 								<td>
-									{{ $group->group_name }}
+									{{ $group->name }}
 								</td>
+                                <td>
+                                    {{ $group->quota }}
+                                </td>
 								<td>
 									<button onclick="location.href='{{ route('edit-groups',$group->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
 									<button onclick="location.href='{{ route('destroy-groups',$group->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
