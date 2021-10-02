@@ -26,12 +26,12 @@ class GroupsSeeder extends Seeder
             'Wendelsee',
         ];
 
-        foreach ($groups_container as $group_name) {
-            $group = Group::where('name', '=', $group_name)->first();
+        foreach ($groups_container as $name) {
+            $group = Group::where('name', '=', $name)->first();
 
             if ($group == null) {
                 $group = Group::create([
-                    'name' => $group_name,
+                    'name' => $name,
                     'quota' => 30
                 ]);
                 $group->save();
