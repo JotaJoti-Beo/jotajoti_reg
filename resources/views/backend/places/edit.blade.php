@@ -8,132 +8,114 @@
 			</div>
 		@endif
 
-		<div class="card EditParticipant mb-3">
-			<div class="card-header" id="headingOne">
-				<h5 class="mb-0">
-					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						Teilnehmer bearbeiten
-					</button>
-				</h5>
-			</div>
-			<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent=".EditParticipant">
-				<div class="card-body table-responsive">
-					{!! Form::open(array('route' => ['update-participations',$participations->id], 'method' => 'POST', 'role' => 'form', 'class' => 'needs-validation')) !!}
-					{!! csrf_field() !!}
+		<div class="card">
+			<div class="card-header">
+				<h5 class="float-left">Ort bearbeiten</h5>
 
-					<div class="form-group has-feedback row {{ $errors->has('scout_name') ? ' has-error ' : '' }}">
-						{!! Form::label('scout_name', 'Pfadiname', array('class' => 'col-md-3 control-label')); !!}
+                <a href="{{  route('places') }}" class="float-right">Zurück zu Orte</a>
+            </div>
+            <div class="card-body">
+                {!! Form::open(array('route' => ['update-places', $place->id], 'method' => 'POST', 'role' => 'form', 'class' => 'needs-validation')) !!}
+                {!! csrf_field() !!}
+
+                <div class="form-group has-feedback row {{ $errors->has('place_name') ? ' has-error ' : '' }}">
+                    {!! Form::label('place_name', 'Bezeichnung', array('class' => 'col-md-3 control-label')); !!}
+                    <div class="col-md-9">
+                        <div class="input-group">
+                            {!! Form::text('place_name', old('place_name', $place->place_name ?? null), array('id' => 'place_name', 'class' => 'form-control', 'placeholder' => 'Bezeichnung')) !!}
+                            <div class="input-group-append">
+                                <label class="input-group-text" for="place_name">
+                                    <i class="fa fa-home" aria-hidden="true"></i>
+                                </label>
+                            </div>
+                        </div>
+                        @if ($errors->has('place_name'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('place_name') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+
+					<div class="form-group has-feedback row {{ $errors->has('place_address') ? ' has-error ' : '' }}">
+						{!! Form::label('place_address', 'Adresse', array('class' => 'col-md-3 control-label')); !!}
 						<div class="col-md-9">
 							<div class="input-group">
-								{!! Form::text('scout_name', old('scut_name', $participations->scout_name ?? null), array('id' => 'scout_name', 'class' => 'form-control', 'placeholder' => 'Pfadiname')) !!}
+								{!! Form::text('place_address', old('place_address', $place->place_address ?? null), array('id' => 'place_address', 'class' => 'form-control', 'placeholder' => 'Adresse')) !!}
 								<div class="input-group-append">
-									<label class="input-group-text" for="scout_name">
-										<i class="fa fa-user" aria-hidden="true"></i>
+									<label class="input-group-text" for="place_address">
+										<i class="fa fa-home" aria-hidden="true"></i>
 									</label>
 								</div>
 							</div>
-							@if ($errors->has('scout_name'))
+							@if ($errors->has('place_address'))
 								<span class="help-block">
-                                        <strong>{{ $errors->first('scout_name') }}</strong>
-                                    </span>
+                                    <strong>{{ $errors->first('place_address') }}</strong>
+                                </span>
 							@endif
 						</div>
 					</div>
 
-					<div class="form-group has-feedback row {{ $errors->has('first_name') ? ' has-error ' : '' }}">
-						{!! Form::label('first_name', 'Vorname', array('class' => 'col-md-3 control-label')); !!}
+					<div class="form-group has-feedback row {{ $errors->has('place_city') ? ' has-error ' : '' }}">
+						{!! Form::label('place_city', 'Ort', array('class' => 'col-md-3 control-label')); !!}
 						<div class="col-md-9">
 							<div class="input-group">
-								{!! Form::text('first_name', old('first_name',$participations->first_name ?? null), array('id' => 'first_name', 'class' => 'form-control', 'placeholder' => 'Vorname')) !!}
+								{!! Form::text('place_city', old('place_city', $place->place_city ?? null), array('id' => 'place_city', 'class' => 'form-control', 'placeholder' => 'Ort')) !!}
 								<div class="input-group-append">
-									<label class="input-group-text" for="first_name">
-										<i class="fa fa-user" aria-hidden="true"></i>
+									<label class="input-group-text" for="place_city">
+										<i class="fa fa-home" aria-hidden="true"></i>
 									</label>
 								</div>
 							</div>
-							@if ($errors->has('first_name'))
+							@if ($errors->has('place_city'))
 								<span class="help-block">
-                                        <strong>{{ $errors->first('first_name') }}</strong>
-                                    </span>
+                                    <strong>{{ $errors->first('place_city') }}</strong>
+                                </span>
 							@endif
 						</div>
 					</div>
 
-					<div class="form-group has-feedback row {{ $errors->has('last_name') ? ' has-error ' : '' }}">
-						{!! Form::label('last_name', 'Nachname', array('class' => 'col-md-3 control-label')); !!}
-						<div class="col-md-9">
-							<div class="input-group">
-								{!! Form::text('last_name', old('last_name',$participations->last_name ?? null), array('id' => 'last_name', 'class' => 'form-control', 'placeholder' => 'Nachname')) !!}
-								<div class="input-group-append">
-									<label class="input-group-text" for="last_name">
-										<i class="fa fa-user" aria-hidden="true"></i>
-									</label>
-								</div>
-							</div>
-							@if ($errors->has('last_name'))
-								<span class="help-block">
-                                        <strong>{{ $errors->first('last_name') }}</strong>
-                                    </span>
-							@endif
-						</div>
-					</div>
+                    <div class="form-group has-feedback row {{ $errors->has('place_plz') ? ' has-error ' : '' }}">
+                        {!! Form::label('place_plz', 'PLZ', array('class' => 'col-md-3 control-label')); !!}
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                {!! Form::text('place_plz', old('place_plz', $place->place_plz ?? null), array('id' => 'place_plz', 'class' => 'form-control', 'placeholder' => 'PLZ')) !!}
+                                <div class="input-group-append">
+                                    <label class="input-group-text" for="place_plz">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            @if ($errors->has('place_plz'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('place_plz') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
 
-					<div class="form-group has-feedback row {{ $errors->has('group') ? ' has-error ' : '' }}">
-						{!! Form::label('group', 'Abteilung', array('class' => 'col-md-3 control-label')); !!}
-						<div class="col-md-9">
-							<div class="input-group">
-								<select class="custom-select form-control" name="group" id="group">
-									<option value="">Abteilung wählen</option>
-									@if ($groups)
-										@foreach($groups as $group)
-											<option value="{{ $group->id }}" {{($participations->FK_GRP == $group->id) ? 'selected':''}}>{{ $group->group_name }}</option>
-										@endforeach
-									@endif
-								</select>
-								<div class="input-group-append">
-									<label class="input-group-text" for="group">
-										<i class="fa fa-group" aria-hidden="true"></i>
-									</label>
-								</div>
-							</div>
-							@if ($errors->has('role'))
-								<span class="help-block">
-                                        <strong>{{ $errors->first('group') }}</strong>
-                                    </span>
-							@endif
-						</div>
-					</div>
-
-					<div class="form-group has-feedback row {{ $errors->has('exer') ? ' has-error ' : '' }}">
-						{!! Form::label('group', 'Exer', array('class' => 'col-md-3 control-label')); !!}
-						<div class="col-md-9">
-							<div class="input-group">
-								<select class="custom-select form-control" name="exer" id="exer">
-									<option value="">Exer wählen</option>
-									@if ($exer)
-										@foreach($exer as $ex)
-											<option value="{{ $ex->id }}" {{($participations->FK_EXER == $ex->id) ? 'selected':''}}>{{ $ex->exer_name }}</option>
-										@endforeach
-									@endif
-								</select>
-								<div class="input-group-append">
-									<label class="input-group-text" for="group">
-										<i class="fa fa-group" aria-hidden="true"></i>
-									</label>
-								</div>
-							</div>
-							@if ($errors->has('exer'))
-								<span class="help-block">
-                                        <strong>{{ $errors->first('exer') }}</strong>
-                                    </span>
-							@endif
-						</div>
-					</div>
+                    <div class="form-group has-feedback row {{ $errors->has('place_max_tn') ? ' has-error ' : '' }}">
+                        {!! Form::label('place_max_tn', 'Maximum TN', array('class' => 'col-md-3 control-label')); !!}
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                {!! Form::text('place_max_tn', old('place_max_tn', $place->place_max_tn ?? null), array('id' => 'place_max_tn', 'class' => 'form-control', 'placeholder' => 'Maximum TN')) !!}
+                                <div class="input-group-append">
+                                    <label class="input-group-text" for="place_max_tn">
+                                        <i class="fa fa-home" aria-hidden="true"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            @if ($errors->has('place_max_tn'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('place_max_tn') }}</strong>
+                                </span>
+                            @endif
+                        </div>
+                    </div>
 
 					{!! Form::button('Teilnehmer aktualisieren', array('class' => 'btn btn-success margin-bottom-1 mb-1 float-right','type' => 'submit' )) !!}
 					{!! Form::close() !!}
 				</div>
 			</div>
-		</div>
 	</div>
 @endsection
