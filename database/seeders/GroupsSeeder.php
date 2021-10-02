@@ -30,11 +30,10 @@ class GroupsSeeder extends Seeder
             $group = Group::where('name', '=', $name)->first();
 
             if ($group == null) {
-                $group = Group::create([
+                Group::create([
                     'name' => $name,
                     'quota' => 30
                 ]);
-                $group->save();
             }
         }
     }
