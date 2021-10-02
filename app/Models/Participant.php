@@ -43,6 +43,8 @@ class Participant extends Model
         'reference',
     ];
 
+    public $timestamps = true;
+
     public function place()
     {
         return $this->hasOne('App\Models\Place');
