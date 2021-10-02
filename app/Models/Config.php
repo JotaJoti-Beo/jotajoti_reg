@@ -15,4 +15,6 @@ class Config extends Model
         'jojo_end',
         'max_tn'
     ];
+
+    public $timestamps = true;
 }
