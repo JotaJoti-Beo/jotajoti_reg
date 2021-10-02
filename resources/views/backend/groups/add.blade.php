@@ -47,7 +47,7 @@
                     {!! Form::label('quota', 'Quota', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::text('quota', NULL, array('id' => 'quota', 'class' => 'form-control', 'placeholder' => 'Quota')) !!}
+                            {!! Form::number('quota', NULL, array('id' => 'quota', 'class' => 'form-control', 'placeholder' => 'Quota')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="quota">
                                     <i class="fa fa-group" aria-hidden="true"></i>
