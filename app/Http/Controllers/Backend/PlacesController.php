@@ -27,7 +27,10 @@ class PlacesController extends Controller
             $places = Place::all();
         }else{
             $search_string = $request->search;
-            $places = Place::where()->orWhere();
+            $places = Place::where("place_name", "LIKE", "%$search_string%")
+                ->orWhere("place_address", "LIKE", "%$search_string%")
+                ->orWhere("place_city", "LIKE", "%$search_string%")
+                ->orWhere("place_plz", "LIKE", "%$search_string%")->get();
         }
 
         return view('backend.places.index', ['places' => $places]);
@@ -40,7 +43,7 @@ class PlacesController extends Controller
      */
     public function create()
     {
-        return view('backend.groups.add');
+        return view('backend.places.add');
     }
 
     /**
@@ -52,10 +55,18 @@ class PlacesController extends Controller
      */
     public function store(Request $request)
     {
-        $group_name = $request->input('group_name');
+        $place_name = $request->input('place_name');
+        $place_address = $request->input('place_address');
+        $place_city = $request->input('place_city');
+        $place_plz = $request->input('place_plz');
+        $place_max_tn = $request->input('place_max_tn');
 
-        DB::table('groups')->insert([
-            'group_name' => $group_name,
+        Place::create([
+            'place_name' => $place_name,
+            'place_address' => $place_address,
+            'place_city' => $place_city,
+            'place_plz' => $place_plz,
+            'place_max_tn' => $place_max_tn,
         ]);
 
         return redirect()->back()->with('message', 'Gruppe wurde erstellt.');
@@ -64,47 +75,52 @@ class PlacesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param $gid
-     *
+     * @param $pid
      * @return Application|Factory|\Illuminate\Contracts\View\View
      */
-    public function edit($gid)
+    public function edit($pid)
     {
-        $groups = DB::table('groups')->where('id', '=', $gid)->first();
+        $place = Place::find($pid);
 
-        return view('backend.groups.edit', ['groups' => $groups]);
+        return view('backend.places.edit', ['place' => $place]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param $gid
-     *
+     * @param $pid
      * @return RedirectResponse
      */
-    public function update(Request $request, $gid)
+    public function update(Request $request, $pid)
     {
-        $group_name = $request->input('group_name');
+        $place_name = $request->input('place_name');
+        $place_address = $request->input('place_address');
+        $place_city = $request->input('place_city');
+        $place_plz = $request->input('place_plz');
+        $place_max_tn = $request->input('place_max_tn');
 
-        $group = Group::find($gid);
-        $group->group_name = $group_name;
-        $group->save();
+        $place = Place::find($pid);
+        $place->place_name = $place_name;
+        $place->place_address = $place_address;
+        $place->place_city = $place_city;
+        $place->plz = $place_plz;
+        $place->place_max_tn = $place_max_tn;
+        $place->save();
 
-        return redirect()->back()->with('message', 'Gruppe wurde aktualisiert.');
+        return redirect()->back()->with('message', 'Ort wurde aktualisiert.');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param $gid
-     *
+     * @param $pid
      * @return RedirectResponse
      */
-    public function destroy($gid)
+    public function destroy($pid)
     {
-        DB::table('groups')->where('id', '=', $gid)->delete();
-
-        return redirect()->back()->with('message', 'Gruppe erfolgreich gelöscht.');
+        Place::destroy($pid);
+        
+        return redirect()->back()->with('message', 'Ort erfolgreich gelöscht.');
     }
 }
