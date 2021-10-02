@@ -12,7 +12,9 @@ class Group extends Model
     protected $table = 'groups';
 
     protected $fillable = [
-        'group_name',
+        'name',
         'quota'
     ];
+
+    public $timestamps = true;
 }
