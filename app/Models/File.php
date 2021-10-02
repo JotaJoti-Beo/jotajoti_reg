@@ -16,6 +16,8 @@ class File extends Model
         'participant_id'
     ];
 
+    public $timestamps = true;
+
     public function participant()
     {
         return $this->hasOne('App\Models\Participant');
