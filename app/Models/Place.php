@@ -18,4 +18,6 @@ class Place extends Model
         'place_plz',
         'place_max_tn',
     ];
+
+    public $timestamps = true;
 }
