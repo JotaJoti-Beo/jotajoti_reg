@@ -26,18 +26,15 @@
 			</div>
 		</div>
 
-		<div class="card TN mb-3">
-			<div class="card-header" id="headingOne">
-				<h5 class="mb-0">
-					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-						Orte
-					</button>
-				</h5>
+		<div class="card mb-3">
+			<div class="card-header">
+				<h5 class="float-left">Orte</h5>
+
+                <a href="{{  route('overwatch') }}" class="float-right">Zurück zu Overwatch</a>
 			</div>
-			<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent=".TN">
-				<div class="card-body table-responsive">
-					<table class="table table-hover">
-						<thead>
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
 						<th>
 							Bezeichnung
 						</th>
@@ -50,8 +47,8 @@
 						<th>
 							Optionen
 						</th>
-						</thead>
-						<tbody>
+                    </thead>
+                    <tbody>
 						@foreach($places as $place)
 							<tr>
 								<td>
@@ -69,11 +66,10 @@
 									<button onclick="location.href='{{ route('destroy-places',$place->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
 								</td>
 							</tr>
-						@endforeach
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
 	</div>
 @endsection
