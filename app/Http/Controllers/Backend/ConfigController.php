@@ -4,10 +4,19 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Config;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ConfigController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Application|Factory|View
+     */
     public function index()
     {
         $config = Config::all();
@@ -15,15 +24,30 @@ class ConfigController extends Controller
         return view('backend.config.index', ['config' => $config]);
     }
 
-    public function edit()
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param $cid
+     *
+     * @return Application|Factory|View
+     */
+    public function edit($cid)
     {
-        return view('backend.config.edit');
+        $config = Config::find($cid);
+
+        return view('backend.config.edit', ['config' => $config]);
     }
 
-    public function update()
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @param $cid
+     *
+     * @return RedirectResponse
+     */
+    public function update(Request $request, $cid)
     {
-        $config = Config::first();
-
-        return view('backend.config.update', ['config' => $config]);
+        return redirect()->back()->with('message', 'Die Konfiguration wurde aktualisiert.');
     }
 }
