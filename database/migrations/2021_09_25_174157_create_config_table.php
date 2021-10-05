@@ -15,10 +15,10 @@ class CreateConfigTable extends Migration
     {
         Schema::create('config', function (Blueprint $table) {
             $table->id();
-            $table->date('reg_start')->nullable();
-            $table->date('jojo_start')->nullable();
-            $table->date('jojo_start_pio')->nullable();
-            $table->date('jojo_end')->nullable();
+            $table->dateTime('reg_start')->nullable();
+            $table->dateTime('jojo_start')->nullable();
+            $table->dateTime('jojo_start_pio')->nullable();
+            $table->dateTime('jojo_end')->nullable();
             $table->integer('max_tn');
             $table->timestamps();
         });
