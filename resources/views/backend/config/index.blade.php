@@ -45,16 +45,16 @@
                         @foreach($config as $entry)
                             <tr>
                                 <td>
-                                    {{ $entry->reg_start }}
+                                    {{ \Carbon\Carbon::parse($entry->reg_start)->format('d.m.Y - H:i') }}
                                 </td>
                                 <td>
-                                    {{ $entry->jojo_start }}
+                                    {{ \Carbon\Carbon::parse($entry->jojo_start)->format('d.m.Y - H:i') }}
                                 </td>
                                 <td>
-                                    {{ $entry->jojo_start_pio }}
+                                    {{ \Carbon\Carbon::parse($entry->jojo_start_pio)->format('d.m.Y - H:i') }}
                                 </td>
                                 <td>
-                                    {{ $entry->jojo_end }}
+                                    {{ \Carbon\Carbon::parse($entry->jojo_end)->format('d.m.Y - H:i') }}
                                 </td>
                                 <td>
                                     {{ $entry->max_tn }}
