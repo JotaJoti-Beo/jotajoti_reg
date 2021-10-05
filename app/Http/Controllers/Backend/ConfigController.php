@@ -14,4 +14,16 @@ class ConfigController extends Controller
 
         return view('backend.config.index', ['config' => $config]);
     }
+
+    public function edit()
+    {
+        return view('backend.config.edit');
+    }
+
+    public function update()
+    {
+        $config = Config::first();
+
+        return view('backend.config.update', ['config' => $config]);
+    }
 }
