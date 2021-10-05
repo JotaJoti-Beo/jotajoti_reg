@@ -35,6 +35,9 @@
                             JotaJoti Start Pios
                         </th>
                         <th>
+                            JotaJoti Ende
+                        </th>
+                        <th>
                             Maximum TN
                         </th>
                     </thead>
