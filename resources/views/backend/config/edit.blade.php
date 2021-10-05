@@ -16,7 +16,7 @@
 
         <div class="card">
             <div class="card-header">
-                <h5 class="float-left">Benutzer bearbeiten</h5>
+                <h5 class="float-left">Konfiguration bearbeiten</h5>
 
                 <a href="{{  route('config.index') }}" class="float-right">Zurück zu Benutzern</a>
             </div>
@@ -104,7 +104,7 @@
                     {!! Form::label('max_tn', 'Maximum TN', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::number('max_tn', old('max_tn', $config->max_tn ?? null), array('id' => 'max_tn', 'class' => 'form-control', 'placeholder' => 'Maximum TN', 'required')) !!}
+                                {!! Form::number('max_tn', old('max_tn', $config->max_tn ?? null), array('id' => 'max_tn', 'class' => 'form-control', 'placeholder' => 'Maximum TN', 'required')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="max_tn">
                                     <i class="fa fa-group" aria-hidden="true"></i>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
 
-                {!! Form::button('Benutzer aktualisieren', array('class' => 'btn btn-success margin-bottom-1 mb-1 float-right','type' => 'submit' )) !!}
+                {!! Form::button('Konfiguration aktualisieren', array('class' => 'btn btn-success margin-bottom-1 mb-1 float-right','type' => 'submit' )) !!}
                 {!! Form::close() !!}
             </div>
         </div>
