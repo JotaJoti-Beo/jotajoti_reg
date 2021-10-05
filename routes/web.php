@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::post('/places/update/{eid}', [PlacesController::class, 'update'])->name('update-places');
     Route::get('/places/destroy/{eid}', [PlacesController::class, 'destroy'])->name('destroy-places');
 
-    Route::resource('config', ConfigController::class)->only('index', 'update');
+    Route::resource('config', ConfigController::class)->only('index','edit', 'update');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/profile/update', [ProfileController::class, 'update'])->name('update-profile');
