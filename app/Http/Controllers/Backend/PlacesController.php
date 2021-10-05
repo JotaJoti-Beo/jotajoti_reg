@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Group;
 use App\Models\Place;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\View\View;
 
 class PlacesController extends Controller
@@ -39,7 +37,7 @@ class PlacesController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return Application|Factory|\Illuminate\Contracts\View\View
+     * @return Application|Factory|View
      */
     public function create()
     {
@@ -76,7 +74,7 @@ class PlacesController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param $pid
-     * @return Application|Factory|\Illuminate\Contracts\View\View
+     * @return Application|Factory|View
      */
     public function edit($pid)
     {
@@ -104,7 +102,7 @@ class PlacesController extends Controller
         $place->place_name = $place_name;
         $place->place_address = $place_address;
         $place->place_city = $place_city;
-        $place->plz = $place_plz;
+        $place->place_plz = $place_plz;
         $place->place_max_tn = $place_max_tn;
         $place->save();
 
@@ -120,7 +118,7 @@ class PlacesController extends Controller
     public function destroy($pid)
     {
         Place::destroy($pid);
-        
+
         return redirect()->back()->with('message', 'Ort erfolgreich gelöscht.');
     }
 }
