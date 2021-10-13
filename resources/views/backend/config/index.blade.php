@@ -8,13 +8,13 @@
             </div>
         @endif
 
-            <div class="card mb-3">
-                <div class="card-header">
-                    <div class="input-group" id="adv-search">
-                        <button onclick="location.href='{{ route('config.edit', 1) }}'" type="button" class="btn btn-primary form-control mt-2">Konfigurieren</button>
-                    </div>
+        <div class="card mb-3">
+            <div class="card-header">
+                <div class="input-group" id="adv-search">
+                    <button onclick="location.href='{{ route('config.edit', 1) }}'" type="button" class="btn btn-primary form-control mt-2">Konfigurieren</button>
                 </div>
             </div>
+        </div>
 
         <div class="card">
             <div class="card-header">

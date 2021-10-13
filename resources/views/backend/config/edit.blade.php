@@ -18,7 +18,7 @@
             <div class="card-header">
                 <h5 class="float-left">Konfiguration bearbeiten</h5>
 
-                <a href="{{  route('config.index') }}" class="float-right">Zurück zu Benutzern</a>
+                <a href="{{  route('config.index') }}" class="float-right">Zurück zu Konfiguration</a>
             </div>
             <div class="card-body">
                 {!! Form::open(array('route' => ['config.update', 1], 'method' => 'PUT', 'role' => 'form', 'class' => 'needs-validation')) !!}
@@ -28,7 +28,7 @@
                     {!! Form::label('reg_start', 'Freigabe Anmeldung', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::datetimeLocal('reg_start', old('reg_start', $config->reg_start ?? null), array('id' => 'reg_start', 'class' => 'form-control', 'placeholder' => 'Freigabe Anmeldung')) !!}
+                            {!! Form::datetimeLocal('reg_start', old('reg_start', \Carbon\Carbon::parse($config->reg_start)->format('Y-m-d\TH:i') ?? null), array('id' => 'reg_start', 'class' => 'form-control', 'placeholder' => 'Freigabe Anmeldung')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="reg_start">
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -47,7 +47,7 @@
                     {!! Form::label('jojo_start', 'JotaJoti Start', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::datetimeLocal('jojo_start', old('jojo_start', $config->jojo_start ?? null), array('id' => 'jojo_start', 'class' => 'form-control', 'placeholder' => 'JotaJoti Start', 'required')) !!}
+                            {!! Form::datetimeLocal('jojo_start', old('jojo_start', \Carbon\Carbon::parse($config->jojo_start)->format('Y-m-d\TH:i') ?? null), array('id' => 'jojo_start', 'class' => 'form-control', 'placeholder' => 'JotaJoti Start', 'required')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="jojo_start">
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -66,7 +66,7 @@
                     {!! Form::label('jojo_start_pio', 'JotaJoti Start Pios', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::datetimeLocal('jojo_start_pio', old('jojo_start_pio', $config->jojo_start_pio ?? null), array('id' => 'jojo_start_pio', 'class' => 'form-control', 'placeholder' => 'JotaJoti Start Pios', 'required')) !!}
+                            {!! Form::datetimeLocal('jojo_start_pio', old('jojo_start_pio', \Carbon\Carbon::parse($config->jojo_start_pio)->format('Y-m-d\TH:i') ?? null), array('id' => 'jojo_start_pio', 'class' => 'form-control', 'placeholder' => 'JotaJoti Start Pios', 'required')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="jojo_start_pio">
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
@@ -85,7 +85,7 @@
                     {!! Form::label('jojo_end', 'JotaJoti Ende', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::datetimeLocal('jojo_end', old('jojo_end', $config->jojo_end ?? null), array('id' => 'jojo_end', 'class' => 'form-control', 'placeholder' => 'JotaJoti Ende', 'required')) !!}
+                            {!! Form::datetimeLocal('jojo_end', old('jojo_end', \Carbon\Carbon::parse($config->jojo_end)->format('Y-m-d\TH:i') ?? null), array('id' => 'jojo_end', 'class' => 'form-control', 'placeholder' => 'JotaJoti Ende', 'required')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="jojo_end">
                                     <i class="fa fa-calendar" aria-hidden="true"></i>
