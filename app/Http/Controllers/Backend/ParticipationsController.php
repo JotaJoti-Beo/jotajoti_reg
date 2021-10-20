@@ -27,14 +27,11 @@ class ParticipationsController extends Controller
             $participants = Participant::all();
         } else {
             $search_string = $request->input('search');
-            $participants = DB::table('participations')
-                ->leftJoin('groups', 'groups.id', '=', 'participations.FK_GRP')
-                ->select('participations.*', 'groups.group_name')
+            $participants = Participant::with('groups')
                 ->where('scout_name', 'LIKE', "%$search_string%")
                 ->orWhere('last_name', 'LIKE', "%$search_string%")
                 ->orWhere('first_name', 'LIKE', "%$search_string%")
-                ->orWhere('group_name', 'LIKE', "%$search_string%")
-                ->orWhere('barcode', 'LIKE', "%$search_string%")->get();
+                ->orWhere('group_name', 'LIKE', "%$search_string%")->get();
         }
 
         return view('backend.participations.index', ['participations' => $participants]);
