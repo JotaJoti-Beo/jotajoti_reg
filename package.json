@@ -7,7 +7,8 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "test": "jest"
     },
     "devDependencies": {
         "@babel/core": "^7.15.5",
@@ -22,6 +23,7 @@
         "css-loader": "^6.4.0",
         "dropzone": "^5.9.3",
         "font-awesome": "^4.7.0",
+        "jest": "^27.3.1",
         "jquery": "^3.6",
         "laravel-mix": "^6.0.34",
         "lodash": "^4.17.19",
