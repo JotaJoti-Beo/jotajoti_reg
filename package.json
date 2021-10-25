@@ -12,7 +12,7 @@
     "devDependencies": {
         "@babel/core": "^7.15.5",
         "@babel/preset-env": "^7.15.6",
-        "axios": "^0.22",
+        "axios": "^0.23",
         "babel-core": "^6.26.3",
         "bootstrap": "^4.6.0",
         "bootstrap-select": "^1.13.18",
@@ -27,7 +27,7 @@
         "popper.js": "^1.16.1",
         "postcss": "^8.3.9",
         "resolve-url-loader": "^4.0.0",
-        "sass": "^1.42.1",
+        "sass": "^1.43.2",
         "sass-loader": "^12.1.0",
         "vue": "^2.6.12",
         "vue-loader": "^15.9.7",
