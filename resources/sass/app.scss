@@ -15,6 +15,31 @@
 // Font Awesome
 @import '~font-awesome/scss/font-awesome';
 
+@import "forms";
+@import "responsive-table";
+
+@include media-breakpoint-up(lg) {
+    .align-items-center-lg {
+        align-items: center;
+    }
+}
+
+[aria-controls*=collapse] {
+    // required to make collapse divs work on iPad
+    cursor: pointer;
+
+    .fa-caret-down::before {
+        transition: transform .3s ease;
+        transform: rotate(180deg);
+        transform-origin: 50% 58%;
+        display: inline-block;
+    }
+
+    &.collapsed .fa-caret-down::before {
+        transform: rotate(0deg);
+    }
+}
+
 .navbar-laravel {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
