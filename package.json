@@ -40,6 +40,6 @@
         "vue-loader": "^15.9.8",
         "vue-multiselect": "^2.1.6",
         "vue-template-compiler": "^2.6.14",
-        "webpack": "^5.64.2"
+        "webpack": "^5.64.4"
     }
 }
