@@ -20,7 +20,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.3.0",
         "kouz/laravel-airbrake": "^0.7.0",
-        "laravel/framework": "8.73.2",
+        "laravel/framework": "8.74.0",
         "laravel/tinker": "^2.6",
         "laravel/ui": "^3.3",
         "laravelcollective/html": "^6.2",
