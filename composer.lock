@@ -5903,16 +5903,16 @@
         },
         {
             "name": "tecnickcom/tcpdf",
-            "version": "6.4.2",
+            "version": "6.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tecnickcom/TCPDF.git",
-                "reference": "172540dcbfdf8dc983bc2fe78feff48ff7ec1c76"
+                "reference": "3cfc830d70b3783ecfc198fc28c183287bcb1dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/172540dcbfdf8dc983bc2fe78feff48ff7ec1c76",
-                "reference": "172540dcbfdf8dc983bc2fe78feff48ff7ec1c76",
+                "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/3cfc830d70b3783ecfc198fc28c183287bcb1dce",
+                "reference": "3cfc830d70b3783ecfc198fc28c183287bcb1dce",
                 "shasum": ""
             },
             "require": {
@@ -5963,7 +5963,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tecnickcom/TCPDF/issues",
-                "source": "https://github.com/tecnickcom/TCPDF/tree/6.4.2"
+                "source": "https://github.com/tecnickcom/TCPDF/tree/6.4.3"
             },
             "funding": [
                 {
@@ -5971,7 +5971,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-07-20T14:43:20+00:00"
+            "time": "2021-12-28T12:31:24+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -7565,16 +7565,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.17.3",
+            "version": "2.17.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "29f1be7f45f6fe4ffcf59a1c87bb469d47f1d227"
+                "reference": "95c80bd35ee6858e9e1439b2f6a698295eeb2070"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/29f1be7f45f6fe4ffcf59a1c87bb469d47f1d227",
-                "reference": "29f1be7f45f6fe4ffcf59a1c87bb469d47f1d227",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/95c80bd35ee6858e9e1439b2f6a698295eeb2070",
+                "reference": "95c80bd35ee6858e9e1439b2f6a698295eeb2070",
                 "shasum": ""
             },
             "require": {
@@ -7639,7 +7639,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2021-12-23T13:28:01+00:00"
+            "time": "2021-12-27T15:11:24+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -8164,9 +8164,6 @@
             },
             "require": {
                 "php": "^7.1 || ^8.0"
-            },
-            "replace": {
-                "myclabs/deep-copy": "self.version"
             },
             "require-dev": {
                 "doctrine/collections": "^1.0",
@@ -10417,5 +10414,5 @@
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
