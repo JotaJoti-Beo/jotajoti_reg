@@ -15,11 +15,11 @@ class CreatePlacesTable extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->id();
-            $table->string('place_name');
-            $table->string('place_address');
-            $table->string('place_city');
-            $table->string('place_plz');
-            $table->integer('place_max_tn');
+            $table->string('name');
+            $table->string('address');
+            $table->string('city');
+            $table->string('plz');
+            $table->integer('quota');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class CreateFk extends Migration
             $table->foreign('place_id')->references('id')->on('places');
         });
 
-        Schema::table('file', function (Blueprint $table) {
+        Schema::table('files', function (Blueprint $table) {
             $table->foreign('participant_id')->references('id')->on('participants');
         });
     }

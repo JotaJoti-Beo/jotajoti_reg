@@ -22,7 +22,7 @@ class ConfigSeeder extends Seeder
             'jojo_start' => $today,
             'jojo_start_pio' => $today,
             'jojo_end' => $today,
-            'max_tn' => 30,
+            'quota' => 32,
         ]);
     }
 }

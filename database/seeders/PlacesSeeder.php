@@ -16,24 +16,24 @@ class PlacesSeeder extends Seeder
     {
         $places_container = [
             [
-                'place_name' => 'Pfadiheim Riedern',
-                'place_address' => 'Riedernstrasse 31',
-                'place_city' => 'Uetendorf',
-                'place_plz' => '3661',
-                'place_max_tn' => '30',
+                'name' => 'Pfadiheim Riedern',
+                'address' => 'Riedernstrasse 31',
+                'city' => 'Uetendorf',
+                'plz' => '3661',
+                'quota' => '32',
             ]
         ];
 
         foreach ($places_container as $new_place) {
-            $place = Place::where('place_name', '=', $new_place['place_name'])->first();
+            $place = Place::where('name', '=', $new_place['name'])->first();
 
             if ($place == null) {
                 $place = Place::create([
-                    'place_name' => $new_place['place_name'],
-                    'place_address' => $new_place['place_address'],
-                    'place_city' => $new_place['place_city'],
-                    'place_plz' => $new_place['place_plz'],
-                    'place_max_tn' => $new_place['place_max_tn'],
+                    'name' => $new_place['name'],
+                    'address' => $new_place['address'],
+                    'city' => $new_place['city'],
+                    'plz' => $new_place['plz'],
+                    'quota' => $new_place['quota'],
                 ]);
                 $place->save();
             }

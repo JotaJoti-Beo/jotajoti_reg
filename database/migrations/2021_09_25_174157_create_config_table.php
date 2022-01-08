@@ -19,7 +19,7 @@ class CreateConfigTable extends Migration
             $table->dateTime('jojo_start')->nullable();
             $table->dateTime('jojo_start_pio')->nullable();
             $table->dateTime('jojo_end')->nullable();
-            $table->integer('max_tn');
+            $table->integer('quota');
             $table->timestamps();
         });
     }
