@@ -52,18 +52,17 @@ class ConfigController extends Controller
         $jojo_start = $request->input('jojo_start');
         $jojo_start_pio = $request->input('jojo_start_pio');
         $jojo_end = $request->input('jojo_end');
-        $max_tn = $request->input('max_tn');
+        $quota = $request->input('quota');
 
-        $config = Config::updateOrCreate([
+        Config::updateOrCreate([
             'id' => $cid,
         ], [
             'reg_start' => $reg_start,
             'jojo_start' => $jojo_start,
             'jojo_start_pio' => $jojo_start_pio,
             'jojo_end' => $jojo_end,
-            'max_tn' => $max_tn,
+            'quota' => $quota,
         ]);
-        $config->max_tn = $max_tn;
 
         return redirect()->back()->with('message', 'Die Konfiguration wurde aktualisiert.');
     }

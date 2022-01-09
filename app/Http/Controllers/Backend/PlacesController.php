@@ -25,10 +25,10 @@ class PlacesController extends Controller
             $places = Place::all();
         }else{
             $search_string = $request->search;
-            $places = Place::where("place_name", "LIKE", "%$search_string%")
-                ->orWhere("place_address", "LIKE", "%$search_string%")
-                ->orWhere("place_city", "LIKE", "%$search_string%")
-                ->orWhere("place_plz", "LIKE", "%$search_string%")->get();
+            $places = Place::where("name", "LIKE", "%$search_string%")
+                ->orWhere("address", "LIKE", "%$search_string%")
+                ->orWhere("city", "LIKE", "%$search_string%")
+                ->orWhere("plz", "LIKE", "%$search_string%")->get();
         }
 
         return view('backend.places.index', ['places' => $places]);
@@ -53,18 +53,18 @@ class PlacesController extends Controller
      */
     public function store(Request $request)
     {
-        $place_name = $request->input('place_name');
-        $place_address = $request->input('place_address');
-        $place_city = $request->input('place_city');
-        $place_plz = $request->input('place_plz');
-        $place_max_tn = $request->input('place_max_tn');
+        $name = $request->input('name');
+        $address = $request->input('address');
+        $city = $request->input('city');
+        $plz = $request->input('plz');
+        $quota = $request->input('quota');
 
         Place::create([
-            'place_name' => $place_name,
-            'place_address' => $place_address,
-            'place_city' => $place_city,
-            'place_plz' => $place_plz,
-            'place_max_tn' => $place_max_tn,
+            'name' => $name,
+            'address' => $address,
+            'city' => $city,
+            'plz' => $plz,
+            'quota' => $quota,
         ]);
 
         return redirect()->back()->with('message', 'Gruppe wurde erstellt.');
@@ -92,18 +92,18 @@ class PlacesController extends Controller
      */
     public function update(Request $request, $pid)
     {
-        $place_name = $request->input('place_name');
-        $place_address = $request->input('place_address');
-        $place_city = $request->input('place_city');
-        $place_plz = $request->input('place_plz');
-        $place_max_tn = $request->input('place_max_tn');
+        $name = $request->input('name');
+        $address = $request->input('address');
+        $city = $request->input('city');
+        $plz = $request->input('plz');
+        $quota = $request->input('quota');
 
         $place = Place::find($pid);
-        $place->place_name = $place_name;
-        $place->place_address = $place_address;
-        $place->place_city = $place_city;
-        $place->place_plz = $place_plz;
-        $place->place_max_tn = $place_max_tn;
+        $place->name = $name;
+        $place->address = $address;
+        $place->city = $city;
+        $place->plz = $plz;
+        $place->quota = $quota;
         $place->save();
 
         return redirect()->back()->with('message', 'Ort wurde aktualisiert.');
