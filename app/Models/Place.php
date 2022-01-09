@@ -12,11 +12,11 @@ class Place extends Model
     protected $table = 'places';
 
     protected $fillable = [
-        'place_name',
-        'place_address',
-        'place_city',
-        'place_plz',
-        'place_max_tn',
+        'name',
+        'address',
+        'city',
+        'plz',
+        'quota',
     ];
 
     public $timestamps = true;

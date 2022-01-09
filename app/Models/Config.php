@@ -11,9 +11,9 @@ class Config extends Model
     protected $fillable = [
         'reg_start',
         'jojo_start',
-        'jojo_pio_start',
+        'jojo_start_pio',
         'jojo_end',
-        'max_tn'
+        'quota'
     ];
 
     public $timestamps = true;
