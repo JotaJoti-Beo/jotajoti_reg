@@ -100,20 +100,20 @@
                     </div>
                 </div>
 
-                <div class="form-group has-feedback row {{ $errors->has('max_tn') ? ' has-error ' : '' }}">
-                    {!! Form::label('max_tn', 'Maximum TN', array('class' => 'col-md-3 control-label')); !!}
+                <div class="form-group has-feedback row {{ $errors->has('quota') ? ' has-error ' : '' }}">
+                    {!! Form::label('quota', 'Maximum TN', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                                {!! Form::number('max_tn', old('max_tn', $config->max_tn ?? null), array('id' => 'max_tn', 'class' => 'form-control', 'placeholder' => 'Maximum TN', 'required')) !!}
+                                {!! Form::number('quota', old('quota', $config->quota ?? null), array('id' => 'quota', 'class' => 'form-control', 'placeholder' => 'Maximum TN', 'required')) !!}
                             <div class="input-group-append">
-                                <label class="input-group-text" for="max_tn">
+                                <label class="input-group-text" for="quota">
                                     <i class="fa fa-group" aria-hidden="true"></i>
                                 </label>
                             </div>
                         </div>
-                        @if ($errors->has('max_tn'))
+                        @if ($errors->has('quota'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('max_tn') }}</strong>
+                                <strong>{{ $errors->first('quota') }}</strong>
                             </span>
                         @endif
                     </div>

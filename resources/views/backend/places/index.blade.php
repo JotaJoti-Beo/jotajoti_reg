@@ -52,14 +52,14 @@
 						@foreach($places as $place)
 							<tr>
 								<td>
-                                    {{ $place->place_name }}
+                                    {{ $place->name }}
 								</td>
 								<td>
-									{{ $place->place_address }} <br />
-                                    {{ $place->place_plz }} {{ $place->place_city }}
+									{{ $place->address }} <br />
+                                    {{ $place->plz }} {{ $place->city }}
 								</td>
 								<td>
-									{{ $place->place_max_tn }}
+									{{ $place->quota }}
 								</td>
 								<td>
 									<button onclick="location.href='{{ route('edit-places',$place->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>

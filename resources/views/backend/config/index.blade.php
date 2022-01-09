@@ -57,7 +57,7 @@
                                     {{ \Carbon\Carbon::parse($entry->jojo_end)->format('d.m.Y - H:i') }}
                                 </td>
                                 <td>
-                                    {{ $entry->max_tn }}
+                                    {{ $entry->quota }}
                                 </td>
                             </tr>
                         @endforeach

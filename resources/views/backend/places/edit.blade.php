@@ -18,96 +18,96 @@
                 {!! Form::open(array('route' => ['update-places', $place->id], 'method' => 'POST', 'role' => 'form', 'class' => 'needs-validation')) !!}
                 {!! csrf_field() !!}
 
-                <div class="form-group has-feedback row {{ $errors->has('place_name') ? ' has-error ' : '' }}">
-                    {!! Form::label('place_name', 'Bezeichnung', array('class' => 'col-md-3 control-label')); !!}
+                <div class="form-group has-feedback row {{ $errors->has('name') ? ' has-error ' : '' }}">
+                    {!! Form::label('name', 'Bezeichnung', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::text('place_name', old('place_name', $place->place_name ?? null), array('id' => 'place_name', 'class' => 'form-control', 'placeholder' => 'Bezeichnung')) !!}
+                            {!! Form::text('name', old('name', $place->name ?? null), array('id' => 'name', 'class' => 'form-control', 'placeholder' => 'Bezeichnung')) !!}
                             <div class="input-group-append">
-                                <label class="input-group-text" for="place_name">
+                                <label class="input-group-text" for="name">
                                     <i class="fa fa-home" aria-hidden="true"></i>
                                 </label>
                             </div>
                         </div>
-                        @if ($errors->has('place_name'))
+                        @if ($errors->has('name'))
                             <span class="help-block">
-                                <strong>{{ $errors->first('place_name') }}</strong>
+                                <strong>{{ $errors->first('name') }}</strong>
                             </span>
                         @endif
                     </div>
                 </div>
 
-					<div class="form-group has-feedback row {{ $errors->has('place_address') ? ' has-error ' : '' }}">
-						{!! Form::label('place_address', 'Adresse', array('class' => 'col-md-3 control-label')); !!}
+					<div class="form-group has-feedback row {{ $errors->has('address') ? ' has-error ' : '' }}">
+						{!! Form::label('address', 'Adresse', array('class' => 'col-md-3 control-label')); !!}
 						<div class="col-md-9">
 							<div class="input-group">
-								{!! Form::text('place_address', old('place_address', $place->place_address ?? null), array('id' => 'place_address', 'class' => 'form-control', 'placeholder' => 'Adresse')) !!}
+								{!! Form::text('address', old('address', $place->address ?? null), array('id' => 'address', 'class' => 'form-control', 'placeholder' => 'Adresse')) !!}
 								<div class="input-group-append">
-									<label class="input-group-text" for="place_address">
+									<label class="input-group-text" for="address">
 										<i class="fa fa-home" aria-hidden="true"></i>
 									</label>
 								</div>
 							</div>
-							@if ($errors->has('place_address'))
+							@if ($errors->has('address'))
 								<span class="help-block">
-                                    <strong>{{ $errors->first('place_address') }}</strong>
+                                    <strong>{{ $errors->first('address') }}</strong>
                                 </span>
 							@endif
 						</div>
 					</div>
 
-					<div class="form-group has-feedback row {{ $errors->has('place_city') ? ' has-error ' : '' }}">
-						{!! Form::label('place_city', 'Ort', array('class' => 'col-md-3 control-label')); !!}
+					<div class="form-group has-feedback row {{ $errors->has('city') ? ' has-error ' : '' }}">
+						{!! Form::label('city', 'Ort', array('class' => 'col-md-3 control-label')); !!}
 						<div class="col-md-9">
 							<div class="input-group">
-								{!! Form::text('place_city', old('place_city', $place->place_city ?? null), array('id' => 'place_city', 'class' => 'form-control', 'placeholder' => 'Ort')) !!}
+								{!! Form::text('city', old('city', $place->city ?? null), array('id' => 'city', 'class' => 'form-control', 'placeholder' => 'Ort')) !!}
 								<div class="input-group-append">
-									<label class="input-group-text" for="place_city">
+									<label class="input-group-text" for="city">
 										<i class="fa fa-home" aria-hidden="true"></i>
 									</label>
 								</div>
 							</div>
-							@if ($errors->has('place_city'))
+							@if ($errors->has('city'))
 								<span class="help-block">
-                                    <strong>{{ $errors->first('place_city') }}</strong>
+                                    <strong>{{ $errors->first('city') }}</strong>
                                 </span>
 							@endif
 						</div>
 					</div>
 
-                    <div class="form-group has-feedback row {{ $errors->has('place_plz') ? ' has-error ' : '' }}">
-                        {!! Form::label('place_plz', 'PLZ', array('class' => 'col-md-3 control-label')); !!}
+                    <div class="form-group has-feedback row {{ $errors->has('plz') ? ' has-error ' : '' }}">
+                        {!! Form::label('plz', 'PLZ', array('class' => 'col-md-3 control-label')); !!}
                         <div class="col-md-9">
                             <div class="input-group">
-                                {!! Form::text('place_plz', old('place_plz', $place->place_plz ?? null), array('id' => 'place_plz', 'class' => 'form-control', 'placeholder' => 'PLZ')) !!}
+                                {!! Form::text('plz', old('plz', $place->plz ?? null), array('id' => 'plz', 'class' => 'form-control', 'placeholder' => 'PLZ')) !!}
                                 <div class="input-group-append">
-                                    <label class="input-group-text" for="place_plz">
+                                    <label class="input-group-text" for="plz">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                     </label>
                                 </div>
                             </div>
-                            @if ($errors->has('place_plz'))
+                            @if ($errors->has('plz'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('place_plz') }}</strong>
+                                    <strong>{{ $errors->first('plz') }}</strong>
                                 </span>
                             @endif
                         </div>
                     </div>
 
-                    <div class="form-group has-feedback row {{ $errors->has('place_max_tn') ? ' has-error ' : '' }}">
-                        {!! Form::label('place_max_tn', 'Maximum TN', array('class' => 'col-md-3 control-label')); !!}
+                    <div class="form-group has-feedback row {{ $errors->has('quota') ? ' has-error ' : '' }}">
+                        {!! Form::label('quota', 'Maximum TN', array('class' => 'col-md-3 control-label')); !!}
                         <div class="col-md-9">
                             <div class="input-group">
-                                {!! Form::text('place_max_tn', old('place_max_tn', $place->place_max_tn ?? null), array('id' => 'place_max_tn', 'class' => 'form-control', 'placeholder' => 'Maximum TN')) !!}
+                                {!! Form::text('quota', old('quota', $place->quota ?? null), array('id' => 'quota', 'class' => 'form-control', 'placeholder' => 'Maximum TN')) !!}
                                 <div class="input-group-append">
-                                    <label class="input-group-text" for="place_max_tn">
+                                    <label class="input-group-text" for="quota">
                                         <i class="fa fa-home" aria-hidden="true"></i>
                                     </label>
                                 </div>
                             </div>
-                            @if ($errors->has('place_max_tn'))
+                            @if ($errors->has('quota'))
                                 <span class="help-block">
-                                    <strong>{{ $errors->first('place_max_tn') }}</strong>
+                                    <strong>{{ $errors->first('quota') }}</strong>
                                 </span>
                             @endif
                         </div>
