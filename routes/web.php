@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\GroupsController;
 use App\Http\Controllers\Backend\OverwatchController;
 use App\Http\Controllers\Backend\ParticipationsController;
 use App\Http\Controllers\Backend\PlacesController;
+use App\Http\Controllers\Backend\PrintController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Frontend\RegisterController;
@@ -61,4 +62,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/profile/update', [ProfileController::class, 'update'])->name('update-profile');
+
+    Route::get('/print/pdf', [PrintController::class, 'pdf'])->name('print-pdf');
+    Route::get('/print/excel', [PrintController::class, 'excel'])->name('print-excel');
 });
