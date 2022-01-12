@@ -5,40 +5,14 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
-@import "~bootstrap-vue/src/index";
+@import '~bootstrap';
 
 // Bootstrap extensions
 @import "~bootstrap-select/sass/bootstrap-select";
 @import "~bootstrap4-toggle/css/bootstrap4-toggle.min.css";
 
 // Font Awesome
-@import '~font-awesome/scss/font-awesome';
-
-@import "forms";
-@import "responsive-table";
-
-@include media-breakpoint-up(lg) {
-    .align-items-center-lg {
-        align-items: center;
-    }
-}
-
-[aria-controls*=collapse] {
-    // required to make collapse divs work on iPad
-    cursor: pointer;
-
-    .fa-caret-down::before {
-        transition: transform .3s ease;
-        transform: rotate(180deg);
-        transform-origin: 50% 58%;
-        display: inline-block;
-    }
-
-    &.collapsed .fa-caret-down::before {
-        transform: rotate(0deg);
-    }
-}
+@import "~font-awesome";
 
 .navbar-laravel {
     background-color: #fff;
