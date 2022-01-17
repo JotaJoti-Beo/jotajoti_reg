@@ -20,7 +20,7 @@
         "guzzlehttp/guzzle": "^7.4.0",
         "kouz/laravel-airbrake": "^0.7.0",
         "laravel/framework": "8.78.1",
-        "laravel/tinker": "^2.6",
+        "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.2",
         "milon/barcode": "^8.0",

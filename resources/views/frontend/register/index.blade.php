@@ -1,5 +1,9 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <register-form-component></register-form-component>
+    <div class="test">
+        <form>
+            <input type="text">
+        </form>
+    </div>
 @endsection
