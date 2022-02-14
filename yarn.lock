@@ -3932,9 +3932,9 @@ safe-buffer@5.2.1, safe-buffer@>=5.1.0, safe-buffer@^5.0.1, safe-buffer@^5.1.0, 
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
-sass-loader@^12.4.0:
-  version "12.4.0"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-12.4.0.tgz#260b0d51a8a373bb8e88efc11f6ba5583fea0bcf"
+sass-loader@^12.5.0:
+  version "12.5.0"
+  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-12.5.0.tgz#8010243734ade76371db8ba3df3cb40295f2b81c"
   dependencies:
     klona "^2.0.4"
     neo-async "^2.6.2"
