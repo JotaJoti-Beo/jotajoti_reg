@@ -18,8 +18,7 @@ class File extends Model
 
     public $timestamps = true;
 
-    public function participant()
-    {
+    public function participant(){
         return $this->hasOne('App\Models\Participant');
     }
 }
