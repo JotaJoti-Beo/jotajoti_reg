@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Config;
 use Carbon\Carbon;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ConfigSeeder extends Seeder
@@ -15,13 +16,14 @@ class ConfigSeeder extends Seeder
      */
     public function run()
     {
-        $today = Carbon::now();
+        $today = Carbon::today();
+        $tomorrow = Carbon::tomorrow();
 
         Config::create([
             'reg_start' => $today,
-            'jojo_start' => $today,
-            'jojo_start_pio' => $today,
-            'jojo_end' => $today,
+            'we_start' => $tomorrow,
+            'we_start_pio' => $tomorrow,
+            'we_end' => $tomorrow,
             'quota' => 32,
         ]);
     }
