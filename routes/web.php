@@ -28,6 +28,7 @@ Auth::routes(['register' => false]);
 
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::redirect('/', '/admin/overwatch', 301);
+
     Route::get('/overwatch', [OverwatchController::class, 'index'])->name('overwatch');
 
     Route::any('/users', [UsersController::class, 'index'])->name('users');
@@ -66,3 +67,4 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::get('/print/pdf', [PrintController::class, 'pdf'])->name('print-pdf');
     Route::get('/print/excel', [PrintController::class, 'excel'])->name('print-excel');
 });
+
