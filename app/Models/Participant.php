@@ -19,15 +19,6 @@ class Participant extends Model
         'tn_phone',
         'tn_mail',
 
-        'parent_name',
-        'parent_phone',
-        'parent_mail',
-
-        'place_id',
-
-        'eating_habits',
-        'allergies',
-
         'group_id',
         'birthday',
         'gender',
@@ -53,5 +44,10 @@ class Participant extends Model
     public function group()
     {
         return $this->hasOne('App\Models\Group');
+    }
+
+    public function parent()
+    {
+        return $this->hasOne('App\Models\Parent');
     }
 }
