@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [RegisterController::class, 'index'])->name('home');
+Route::get('/register', [RegisterController::class, 'register'])->name('register');
+Route::get('/completed', [RegisterController::class, 'completed'])->name('completed');
 
 Auth::routes(['register' => false]);
 
