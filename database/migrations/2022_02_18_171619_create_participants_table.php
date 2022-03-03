@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('birthday');
             $table->string('gender');
 
-            $table->date('pio_day')->nullable();
+            $table->boolean('pio_day')->default(false);
 
             $table->boolean('bring_laptop')->default(false);
             $table->boolean('photos_allowed')->default(false);
