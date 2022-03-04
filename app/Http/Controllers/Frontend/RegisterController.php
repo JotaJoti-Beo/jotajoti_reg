@@ -10,4 +10,14 @@ class RegisterController extends Controller
     {
         return view('frontend.register.index');
     }
+
+    public function register()
+    {
+        return view('frontend.register.register');
+    }
+
+    public function completed()
+    {
+        return view('frontend.register.completed');
+    }
 }
