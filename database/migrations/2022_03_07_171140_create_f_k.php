@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::table('participants', function(Blueprint $table){
             $table->foreign('group_id')->references('id')->on('groups');
             $table->foreign('place_id')->references('id')->on('places');
+            $table->foreign('guardian_id')->references('id')->on('guardians');
         });
 
         Schema::table('files', function(Blueprint $table){
