@@ -16,14 +16,19 @@ class Participant extends Model
         'first_name',
         'last_name',
 
-        'tn_phone',
-        'tn_mail',
+        'phone',
+        'mail',
+
+        'guardian_id',
+
+        'place_id',
+
+        'eating_habits',
+        'allergies',
 
         'group_id',
         'birthday',
         'gender',
-
-        'pio_day',
 
         'bring_laptop',
         'photos_allowed',
