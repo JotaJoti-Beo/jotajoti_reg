@@ -23,6 +23,8 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('mail')->nullable();
 
+            $table->foreignId('guardian_id');
+
             $table->foreignId('place_id');
 
             $table->string('eating_habits')->nullable();
