@@ -33,7 +33,7 @@ return new class extends Migration
 
             $table->foreignId('group_id');
             $table->string('birthday');
-            $table->enum('gender', Gender::class);
+            //$table->enum('gender', Gender::class);
 
             $table->boolean('pio_day')->default(false);
 
