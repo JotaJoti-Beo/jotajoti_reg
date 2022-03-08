@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Hash;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -20,16 +20,15 @@ class UsersController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(Request $request)
+    public function index(Request $request): View|Factory|Application
     {
-        if ($request->input("search") == null) {
+        if($request->input("search") == null) {
             $users = User::all();
         } else {
             $search_string = $request->input('search');
             $users = User::where("scout_name", "LIKE", "%$search_string%")
-                            ->orWhere("first_name", "LIKE", "%$search_string%")
-                            ->orWhere("last_name", "LIKE", "%$search_string%")
-                            ->get();
+                ->orWhere("first_name", "LIKE", "%$search_string%")
+                ->orWhere("last_name", "LIKE", "%$search_string%")->get();
         }
 
         return view('backend.users.index', ['users' => $users]);
@@ -40,7 +39,7 @@ class UsersController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function create()
+    public function create(): View|Factory|Application
     {
         return view('backend.users.add');
     }
@@ -87,7 +86,7 @@ class UsersController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function edit($uid)
+    public function edit($uid): View|Factory|Application
     {
         $user = User::find($uid);
 
