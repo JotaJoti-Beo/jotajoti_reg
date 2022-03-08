@@ -30,6 +30,8 @@ class Participant extends Model
         'birthday',
         'gender',
 
+        'pio_day',
+
         'bring_laptop',
         'photos_allowed',
 
