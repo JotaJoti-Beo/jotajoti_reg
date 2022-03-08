@@ -14,7 +14,8 @@
             <h5>Anmeldungen</h5>
         </div>
         <div class="card-body">
-            Test
+            <p>Aktuell sind ... von ... Plätzen belegt!</p>
+            <p class="card-text"><small class="text-muted">Zuletzt aktualisiert um: </small></p>
         </div>
     </div>
 @endsection
