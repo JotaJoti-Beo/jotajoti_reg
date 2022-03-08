@@ -8,6 +8,6 @@ class OverwatchController extends Controller
 {
     public function index()
     {
-        return view('backend.overwatch.index');
+        return view('backend.overwatch.overwatch');
     }
 }
