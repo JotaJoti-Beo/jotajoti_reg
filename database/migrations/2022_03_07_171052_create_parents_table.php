@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('guardians', function (Blueprint $table) {
+        Schema::create('parents', function (Blueprint $table) {
             $table->id();
 
             $table->string('first_name');
@@ -21,6 +21,8 @@ return new class extends Migration
 
             $table->string('phone');
             $table->string('mail');
+
+            $table->uuid('reference');
 
             $table->timestamps();
         });
