@@ -13,7 +13,9 @@
         <br />
 
         <div class="col-10 offset-1">
-            <form method="POST" action="/" accept-charset="UTF-8" role="form" class="needs-validation form-horizontal">
+            <form method="POST" action="{{ url('/register/guardian') }}" accept-charset="UTF-8" role="form" class="needs-validation form-horizontal">
+                @csrf
+
                 <div class="row has-feedback {{ $errors->has('parent_first_name') ? ' has-error ' : '' }}">
                     <label for="parent_first_name" class="col-md-3 form-label">Vorname Erziehungsberechtigte</label>
                     <div class="col-md-9">
