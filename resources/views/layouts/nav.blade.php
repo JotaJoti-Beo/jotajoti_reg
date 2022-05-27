@@ -31,6 +31,9 @@
                             <a class="dropdown-item {{ Request::is('admin/participations/')}}" href="{{ url('/admin/participations') }}">
                                 Teilnehmer
                             </a>
+                            <a class="dropdown-item {{ Request::is('admin/guardians/')}}" href="{{ url('/admin/guardians') }}">
+                                Erziehungsberechtigte
+                            </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item {{ Request::is('admin/groups/')}}" href="{{ url('/admin/groups') }}">
                                 Gruppen
