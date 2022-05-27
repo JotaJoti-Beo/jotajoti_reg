@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\ConfigController;
 use App\Http\Controllers\Backend\GroupsController;
+use App\Http\Controllers\Backend\GuardiansController;
 use App\Http\Controllers\Backend\OverwatchController;
 use App\Http\Controllers\Backend\ParticipationsController;
 use App\Http\Controllers\Backend\PlacesController;
@@ -24,8 +25,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [RegisterController::class, 'index'])->name('home');
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
-Route::post('/register/guardian', [RegisterController::class, 'registerParent'])->name('register-parent');
-Route::get('/completed', [RegisterController::class, 'completed'])->name('completed');
+Route::post('/register/guardian', [RegisterController::class, 'registerGuardian'])->name('register-parent');
+Route::get('/register/guardian/completed', [RegisterController::class, 'completedGuardian'])->name('completed-parent');
 
 Auth::routes(['register' => false]);
 
@@ -40,6 +41,13 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::get('/users/edit/{uid}', [UsersController::class, 'edit'])->name('edit-users');
     Route::post('/users/update/{uid}', [UsersController::class, 'update'])->name('update-users');
     Route::get('/users/destroy/{uid}', [UsersController::class, 'destroy'])->name('destroy-users');
+
+    Route::any('/guardians', [GuardiansController::class, 'index'])->name('guardians');
+    Route::get('/guardians/add', [GuardiansController::class, 'create'])->name('add-guardians');
+    Route::post('/guardians/store', [GuardiansController::class, 'store'])->name('store-guardians');
+    Route::get('/guardians/edit/{pid}', [GuardiansController::class, 'edit'])->name('edit-guardians');
+    Route::post('/guardians/update/{pid}', [GuardiansController::class, 'update'])->name('update-guardians');
+    Route::get('/guardians/destroy/{pid}', [GuardiansController::class, 'destroy'])->name('destroy-guardians');
 
     Route::any('/participations', [ParticipationsController::class, 'index'])->name('participations');
     Route::get('/participations/add', [ParticipationsController::class, 'create'])->name('add-participations');
