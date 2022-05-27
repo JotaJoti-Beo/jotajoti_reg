@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('phone');
             $table->string('mail');
 
+            $table->uuid('reference');
+
             $table->timestamps();
         });
     }

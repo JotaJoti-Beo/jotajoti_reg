@@ -45,16 +45,16 @@ class Participant extends Model
 
     public function place()
     {
-        return $this->hasOne(\App\Models\Place::class);
+        return $this->hasOne(Place::class);
     }
 
     public function group()
     {
-        return $this->hasOne(\App\Models\Group::class);
+        return $this->hasOne(Group::class);
     }
 
     public function parent()
     {
-        return $this->hasOne('App\Models\Parent');
+        return $this->hasOne(Parent::class);
     }
 }

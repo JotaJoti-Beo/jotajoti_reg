@@ -16,6 +16,7 @@ class Guardian extends Model
         'last_name',
         'phone',
         'mail',
+        'reference'
     ];
 
     public $timestamps = true;

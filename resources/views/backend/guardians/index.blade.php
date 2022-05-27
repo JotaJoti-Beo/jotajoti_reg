@@ -1,17 +1,17 @@
 @extends('layouts.backend')
 
 @section('content')
-    <div class="col-12">
-        @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
-        @endif
+	<div class="col-12">
+		@if(session()->has('message'))
+			<div class="alert alert-success">
+				{{ session()->get('message') }}
+			</div>
+		@endif
     </div>
 
     <div class="card col-md-10 offset-md-1">
         <div class="card-header">
-            {!! Form::open(array('route' => 'places', 'method' => 'POST', 'role' => 'form', 'class' => 'needs-validation')) !!}
+            {!! Form::open(array('route' => 'guardians', 'method' => 'POST', 'role' => 'form', 'class' => 'needs-validation')) !!}
             <div class="input-group" id="adv-search">
                 {!! Form::text('search', NULL, array('id' => 'search', 'class' => 'form-control', 'placeholder' => 'Suche')) !!}
                 <div class="input-group-append">
@@ -22,7 +22,7 @@
             </div>
             {!! Form::close() !!}
             <div class="input-group" id="adv-search">
-                <button onclick="location.href='{{ route('add-places') }}'" type="button" class="btn btn-primary form-control mt-2">Neuer Ort</button>
+                <button onclick="location.href='{{ route('add-guardians') }}'" type="button" class="btn btn-primary form-control mt-2">Neue Erziehungsberechtigte</button>
             </div>
         </div>
     </div>
@@ -31,42 +31,41 @@
 
     <div class="card col-md-10 offset-md-1">
         <div class="card-header">
-            <h5 class="float-start">Orte</h5>
+            <h5 class="float-start">Erziehungsberechtigte</h5>
 
-            <a href="{{  route('overwatch') }}" class="float-end">Zurück zu Overwatch</a>
+            <a href="{{ route('guardians') }}" class="float-end">Zurück zu Erziehungsberechtigte</a>
         </div>
         <div class="card-body table-responsive">
             <table class="table table-hover">
                 <thead>
                     <th>
-                        Bezeichnung
+                        Name
                     </th>
                     <th>
-                        Adresse
+                        Abteilung
                     </th>
                     <th>
-                        Anzahl TN
+                        Exer
                     </th>
                     <th>
                         Optionen
                     </th>
                 </thead>
                 <tbody>
-                    @foreach($places as $place)
+                    @foreach($guardians as $guardian)
                         <tr>
                             <td>
-                                {{ $place->name }}
+                                {{ $guardian->first_name }} {{ $guardian->last_name }}
                             </td>
                             <td>
-                                {{ $place->address }} <br />
-                                {{ $place->plz }} {{ $place->city }}
+                                {{ $guardian->group_name }}
                             </td>
                             <td>
-                                {{ $place->quota }}
+                                {{ $guardian->exer_name }}
                             </td>
                             <td>
-                                <button onclick="location.href='{{ route('edit-places',$place->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
-                                <button onclick="location.href='{{ route('destroy-places',$place->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
+                                <button onclick="location.href='{{ route('edit-participations',$guardian->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
+                                <button onclick="location.href='{{ route('destroy-participations',$guardian->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
                             </td>
                         </tr>
                     @endforeach

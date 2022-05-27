@@ -6,21 +6,23 @@
     </div>
 
     <br />
+    <br />
 
     <div class="container-fluid">
-        <h2 class="text-center">Teilnahmebedingungen:</h2>
+        <div class="col-10 offset-1">
+            <h2 class="text-center">Teilnahmebedingungen:</h2>
+            <p>
+                Liebe Interessenten für das Jota Joti Beo. <br />
+                Es freut uns, dass du dich für die Teilnahme am Jota Joti hast. <br />
+                Damit das Projekt möglichst Reibungslos funktioniert, haben wir einige Teilnahmebedingungen zusammengetragen. Bitte lest diese Aufmerksam durch und gebt in der Anmeldung die Zustimmung, diese zu befolgen.
 
-        <p>
+            </p>
 
-        </p>
+            <br />
+            <br />
 
-        <br />
-
-        <h2 class="text-center">Die neusten Infos:</h2>
-
-        <br />
-
-        <h2 class="text-center">Teilnehmen:</h2>
-        <button>Anmelde-Formular</button>
+            <h2 class="text-center">Teilnehmen:</h2>
+            <button class="btn btn-info col-12" onclick="window.location='{{ url('/register') }}'">Anmelde-Formular</button>
+        </div>
     </div>
 @endsection

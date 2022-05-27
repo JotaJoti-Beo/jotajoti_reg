@@ -41,9 +41,6 @@ return new class extends Migration
             $table->boolean('photos_allowed')->default(false);
             $table->boolean('accept_agb')->default(false);
 
-            $table->uuid('uuid');
-            $table->uuid('reference');
-
             $table->boolean('isWaitingList')->default(false);
 
             $table->timestamps();
