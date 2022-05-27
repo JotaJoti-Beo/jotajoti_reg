@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [RegisterController::class, 'index'])->name('home');
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
-Route::post('/register/parent', [RegisterController::class, 'registerParent'])->name('register-parent');
+Route::post('/register/guardian', [RegisterController::class, 'registerParent'])->name('register-parent');
 Route::get('/completed', [RegisterController::class, 'completed'])->name('completed');
 
 Auth::routes(['register' => false]);
