@@ -9,13 +9,13 @@ class Guardian extends Model
 {
     use HasFactory;
 
-    protected $table = 'parents';
+    protected $table = 'guardians';
 
     protected $fillable = [
-        'parent_first_name',
-        'parent_last_name',
-        'parent_mail',
-        'parent_phone',
+        'first_name',
+        'last_name',
+        'phone',
+        'mail',
         'reference'
     ];
 
