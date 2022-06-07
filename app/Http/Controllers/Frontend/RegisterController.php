@@ -14,10 +14,7 @@ class RegisterController extends Controller
         return view('frontend.register.index');
     }
 
-    public function register()
-    {
-        return view('frontend.register.register');
-    }
+
 
     public function registerParent(Request $request)
     {
@@ -35,10 +32,22 @@ class RegisterController extends Controller
             'mail' => $parent_mail,
             'reference' => $reference,
         ]);
+
+        return redirect()->route('completed-parent')->with('message', 'Konto wurde erstellt.');
+    }
+
+    public function completedGuardian()
+    {
+        return view('frontend.register.guardian.completed');
+    }
+
+    public function register()
+    {
+        return view('frontend.register.register');
     }
 
     public function completed()
     {
-        return view('frontend.register.completed');
+        return view('frontend.register.register');
     }
 }
