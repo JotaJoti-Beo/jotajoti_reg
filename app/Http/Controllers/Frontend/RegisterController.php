@@ -14,30 +14,30 @@ class RegisterController extends Controller
         return view('frontend.register.index');
     }
 
-
-
-    public function registerParent(Request $request)
+    public function registerGuardian(Request $request)
     {
-        $parent_first_name = $request->input('parent_first_name');
-        $parent_last_name = $request->input('parent_last_name');
-        $parent_mail = $request->input('parent_mail');
-        $parent_phone = $request->input('parent_phone');
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $mail = $request->input('mail');
+        $phone = $request->input('phone');
 
         $reference = Str::uuid();
 
-        Guardian::create([
-            'first_name' => $parent_first_name,
-            'last_name' => $parent_last_name,
-            'phone' => $parent_phone,
-            'mail' => $parent_mail,
+        $guardian = Guardian::create([
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'phone' => $phone,
+            'mail' => $mail,
             'reference' => $reference,
         ]);
 
-        return redirect()->route('completed-parent')->with('message', 'Konto wurde erstellt.');
+        return redirect()->route('front-show-guardian', $guardian->id)->with('message', 'Konto wurde erstellt.');
     }
 
     public function completedGuardian()
     {
+
+
         return view('frontend.register.guardian.completed');
     }
 
