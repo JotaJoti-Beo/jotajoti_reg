@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\PlacesController;
 use App\Http\Controllers\Backend\PrintController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\UsersController;
+use App\Http\Controllers\Frontend\GuardianController;
+use App\Http\Controllers\Frontend\ParticipantController;
 use App\Http\Controllers\Frontend\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +27,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [RegisterController::class, 'index'])->name('home');
 Route::get('/register', [RegisterController::class, 'register'])->name('register');
-Route::post('/register/guardian', [RegisterController::class, 'registerGuardian'])->name('register-parent');
+Route::post('/register/guardian', [RegisterController::class, 'registerGuardian'])->name('front-register-guardian');
 Route::get('/register/guardian/completed', [RegisterController::class, 'completedGuardian'])->name('completed-parent');
+
+Route::get('/guardian/show/{guardid}', [GuardianController::class, 'show'])->name('front-show-guardian');
+Route::get('/guardian/edit/{guardid}', [GuardiansController::class, 'edit'])->name('front-edit-guardian');
+Route::post('/guardian/update/{guardid}', [GuardiansController::class, 'update'])->name('front-update-guardian');
+
+Route::get('/participant/add', [ParticipantController::class, 'create'])->name('front-add-participant');
+Route::post('/participant/store', [ParticipantController::class, 'store'])->name('front-store-participant');
+Route::get('/participant/edit/{pid}', [ParticipantController::class, 'edit'])->name('front-edit-participant');
+Route::post('/participant/update/{pid}', [ParticipantController::class, 'update'])->name('front-update-participant');
+Route::get('/participant/destroy/{pid}', [ParticipantController::class, 'destroy'])->name('front-destroy-participant');
 
 Auth::routes(['register' => false]);
 
