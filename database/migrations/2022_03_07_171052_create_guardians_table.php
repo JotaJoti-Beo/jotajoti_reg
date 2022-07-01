@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
 
-            $table->string('phone');
-            $table->string('mail');
+            $table->string('phone')->unique();
+            $table->string('mail')->unique();
 
-            $table->uuid('reference');
+            $table->uuid('reference')->unique();
 
             $table->timestamps();
         });
