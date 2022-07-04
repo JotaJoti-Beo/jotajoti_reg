@@ -31,8 +31,8 @@ Route::post('/register/guardian', [RegisterController::class, 'registerGuardian'
 Route::get('/register/guardian/completed', [RegisterController::class, 'completedGuardian'])->name('completed-parent');
 
 Route::get('/guardian/show/{guardid}', [GuardianController::class, 'show'])->name('front-show-guardian');
-Route::get('/guardian/edit/{guardid}', [GuardiansController::class, 'edit'])->name('front-edit-guardian');
-Route::post('/guardian/update/{guardid}', [GuardiansController::class, 'update'])->name('front-update-guardian');
+Route::get('/guardian/edit/{guardid}', [GuardianController::class, 'edit'])->name('front-edit-guardian');
+Route::post('/guardian/update/{guardid}', [GuardianController::class, 'update'])->name('front-update-guardian');
 
 Route::get('/participant/add', [ParticipantController::class, 'create'])->name('front-add-participant');
 Route::post('/participant/store', [ParticipantController::class, 'store'])->name('front-store-participant');
