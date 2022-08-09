@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Guardian;
 use App\Models\Participant;
 
 class ParticipantController
 {
     public function create()
     {
+        return view('frontend.register.participant.add');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-
+        $request->input('');
     }
 
     public function edit()
