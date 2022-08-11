@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
-    <div class="col-12">
+    <div class="col-md-10 offset-md-1">
         @if(session()->has('message'))
             <div class="alert alert-success">
                 {{ session()->get('message') }}
@@ -24,6 +24,8 @@
             <h5 class="float-start">Erziehungsberechtigte / Notfallkontakt</h5>
         </div>
         <div class="card-body table-responsive">
+            <p>Beachte, dass diese Informationen als Notfallkontakt während dem Lager genutzt werden.</p>
+
             <table class="table table-hover">
                 <tr>
                     <th>Name</th>
