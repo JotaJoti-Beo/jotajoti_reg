@@ -1,6 +1,10 @@
 @extends('layouts.frontend')
 
 @section('content')
+    <div class="col-md-10 offset-md-1 mb-5 text-center">
+        <h1>Anmeldung JotaJoti Beo 2022</h1>
+    </div>
+
     <div class="col-md-10 offset-md-1">
         @if(session()->has('message'))
             <div class="alert alert-success">
@@ -43,7 +47,7 @@
 
             <br />
 
-            <button onclick="location.href='{{ route('front-edit-guardian', $guardian->id) }}'" class="btn btn-info col-12">Informationen bearbeiten <span class="fa fa-edit"></span></button>
+            <button onclick="location.href='{{ route('front-edit-guardian', $guardian->reference) }}'" class="btn btn-info col-12">Informationen bearbeiten <span class="fa fa-edit"></span></button>
         </div>
     </div>
 @endsection
