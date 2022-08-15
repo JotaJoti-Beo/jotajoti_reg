@@ -1,6 +1,10 @@
 @extends('layouts.frontend')
 
 @section('content')
+    <div class="col-md-10 offset-md-1 mb-5 text-center">
+        <h1>Anmeldung JotaJoti Beo 2022</h1>
+    </div>
+
     <div class="col-md-10 offset-md-1">
         @if(session()->has('message'))
             <div class="alert alert-success">
@@ -13,10 +17,10 @@
         <div class="card-header">
             <h5 class="float-start">Erziehungsberechtigte / Notfallkontakt bearbeiten</h5>
 
-            <a href="{{ route('front-show-guardian', $guardian->id) }}" class="float-end">Zurück zur Übersicht</a>
+            <a href="{{ route('front-show-guardian', $guardian->reference) }}" class="float-end">Zurück zur Übersicht</a>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{ route('front-update-guardian', $guardian->id) }}" accept-charset="UTF-8" role="form" class="needs-validation">
+            <form method="POST" action="{{ route('front-update-guardian', $guardian->reference) }}" accept-charset="UTF-8" role="form" class="needs-validation">
                 @csrf
 
                 <div class="row has-feedback {{ $errors->has('first_name') ? ' has-error ' : '' }}">
@@ -77,12 +81,14 @@
                     <label for="phone" class="col-md-3 form-label">Telefon Erziehungsberechtigte</label>
                     <div class="col-md-9">
                         <div class="input-group mb-3">
-                            <input id="phone" class="form-control" value="{{ old('phone', $guardian->phone) }}" placeholder="Telefon Erziehungsberechtigte" name="phone" type="tel" required />
+                            <input id="phone" class="form-control" value="{{ old('phone', $guardian->phone) }}" placeholder="Telefon Erziehungsberechtigte" name="phone" type="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" required />
 
                             <label class="input-group-text" for="phone">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                             </label>
                         </div>
+                        <div class="form-text">Format: 123 123 12 12</div>
+
                         @if ($errors->has('phone'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('phone') }}</strong>
