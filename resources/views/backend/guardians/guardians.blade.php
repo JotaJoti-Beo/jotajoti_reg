@@ -33,7 +33,7 @@
         <div class="card-header">
             <h5 class="float-start">Erziehungsberechtigte</h5>
 
-            <a href="{{ route('guardians') }}" class="float-end">Zurück zu Erziehungsberechtigte</a>
+            <a href="{{ route('overwatch') }}" class="float-end">Zurück zu Overwatch</a>
         </div>
         <div class="card-body table-responsive">
             <table class="table table-hover">
@@ -42,10 +42,13 @@
                         Name
                     </th>
                     <th>
-                        Abteilung
+                        Mailadresse
                     </th>
                     <th>
-                        Exer
+                        Telefonnummer
+                    </th>
+                    <th>
+                        UUID
                     </th>
                     <th>
                         Optionen
@@ -58,13 +61,16 @@
                                 {{ $guardian->first_name }} {{ $guardian->last_name }}
                             </td>
                             <td>
-                                {{ $guardian->group_name }}
+                                {{ $guardian->mail }}
                             </td>
                             <td>
-                                {{ $guardian->exer_name }}
+                                {{ $guardian->phone }}
                             </td>
                             <td>
-                                <button onclick="location.href='{{ route('edit-participations',$guardian->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
+                                {{ $guardian->reference }}
+                            </td>
+                            <td>
+                                <button onclick="location.href='{{ route('edit-guardians',$guardian->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-edit"></span></button>
                                 <button onclick="location.href='{{ route('destroy-participations',$guardian->id) }}'" class="btn btn-danger ml-2"><span class="fa fa-remove"></span></button>
                             </td>
                         </tr>
