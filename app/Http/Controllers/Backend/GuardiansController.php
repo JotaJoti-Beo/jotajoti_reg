@@ -19,7 +19,7 @@ class GuardiansController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(Request $request)
+    public function index(Request $request): Factory|View|Application
     {
         if($request->input('search') == null) {
             $guardians = Guardian::all();
@@ -29,7 +29,7 @@ class GuardiansController extends Controller
                 ->orWhere("last_name", "LIKE", "%$search_string%")->get();
         }
 
-        return view('backend.guardians.index', ['guardians' => $guardians]);
+        return view('backend.guardians.guardians', ['guardians' => $guardians]);
     }
 
     /**
@@ -37,7 +37,7 @@ class GuardiansController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function create()
+    public function create(): View|Factory|Application
     {
         return view('backend.guardians.add');
     }
@@ -49,19 +49,30 @@ class GuardiansController extends Controller
      *
      * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $mail = $request->input('mail');
+        $phone = $request->input('phone');
 
+        Guardian::create([
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'mail' => $mail,
+            'phone' => $phone,
+        ]);
+
+        return redirect()->back()->with('message', 'Daten wurden gespeichert!');
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param $uid
-     *
+     * @param $gid
      * @return Application|Factory|View
      */
-    public function edit($gid)
+    public function edit($gid): View|Factory|Application
     {
         $guardian = Guardian::find($gid);
 
@@ -71,24 +82,32 @@ class GuardiansController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param                          $uid
-     *
      * @return RedirectResponse
      */
-    public function update()
+    public function update(Request $request, $guardid): RedirectResponse
     {
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $mail = $request->input('mail');
+        $phone = $request->input('phone');
 
+        Guardian::where('reference', '=', $guardid)->update([
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'mail' => $mail,
+            'phone' => $phone,
+        ]);
+
+        return redirect()->back()->with('message', 'Daten wurden gespeichert!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param $uid
-     *
+     * @param $gid
      * @return RedirectResponse
      */
-    public function destroy($gid)
+    public function destroy($gid): RedirectResponse
     {
         Guardian::destroy($gid);
 
