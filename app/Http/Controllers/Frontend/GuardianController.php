@@ -3,30 +3,38 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Guardian;
+use Illuminate\Http\Request;
 
 class GuardianController
 {
-    public function show($guardid)
+    public function show($uuid)
     {
-        $guardian = Guardian::find($guardid);
+        $guardian = Guardian::where('reference', '=', $uuid)->first();
 
         return view('frontend.register.guardian.show', ['guardian' => $guardian]);
     }
 
-    public function edit($guardid)
+    public function edit($uuid)
     {
-        $guardian = Guardian::find($guardid);
+        $guardian = Guardian::where('reference', '=', $uuid)->first();
 
         return view('frontend.register.guardian.edit', ['guardian' => $guardian]);
     }
 
-    public function update($guardid)
+    public function update($uuid, Request $request)
     {
-        $guardian = Guardian::update([$guardid],
-            [
-                ''
-            ]);
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $mail = $request->input('mail');
+        $phone = $request->input('phone');
 
-        return redirect()->back()->with('message', 'LUL');
+        $guardian = Guardian::where('reference', '=', $uuid)->update([
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'mail' => $mail,
+            'phone' => $phone,
+        ]);
+
+        return redirect()->back()->with('message', 'Daten wurden gespeichert!');
     }
 }
