@@ -16,14 +16,16 @@
             <a href="{{ route('guardians') }}" class="float-end">Zurück zu Erziehungsberechtigte</a>
         </div>
         <div class="card-body table-responsive">
-            {!! Form::open(array('route' => ['update-participations',$participations->id], 'method' => 'POST', 'role' => 'form', 'class' => 'needs-validation')) !!}
+            <form method="POST" action="{{ route('front-update-guardian', $guardian->reference) }}" accept-charset="UTF-8" role="form" class="needs-validation">
+
+            {!! Form::open(array('route' => ['update-participations',$guardian->id], 'method' => 'POST', 'role' => 'form', 'class' => 'needs-validation')) !!}
                 @csrf
 
                 <div class="form-group has-feedback row {{ $errors->has('first_name') ? ' has-error ' : '' }}">
                     {!! Form::label('first_name', 'Vorname', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::text('first_name', old('first_name',$participations->first_name ?? null), array('id' => 'first_name', 'class' => 'form-control', 'placeholder' => 'Vorname')) !!}
+                            {!! Form::text('first_name', old('first_name', $guardian->first_name ?? null), array('id' => 'first_name', 'class' => 'form-control', 'placeholder' => 'Vorname')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="first_name">
                                     <i class="fa fa-user" aria-hidden="true"></i>
@@ -42,7 +44,7 @@
                     {!! Form::label('last_name', 'Nachname', array('class' => 'col-md-3 control-label')); !!}
                     <div class="col-md-9">
                         <div class="input-group">
-                            {!! Form::text('last_name', old('last_name',$participations->last_name ?? null), array('id' => 'last_name', 'class' => 'form-control', 'placeholder' => 'Nachname')) !!}
+                            {!! Form::text('last_name', old('last_name', $guardian->last_name ?? null), array('id' => 'last_name', 'class' => 'form-control', 'placeholder' => 'Nachname')) !!}
                             <div class="input-group-append">
                                 <label class="input-group-text" for="last_name">
                                     <i class="fa fa-user" aria-hidden="true"></i>
@@ -51,8 +53,8 @@
                         </div>
                         @if ($errors->has('last_name'))
                             <span class="help-block">
-                                    <strong>{{ $errors->first('last_name') }}</strong>
-                                </span>
+                                <strong>{{ $errors->first('last_name') }}</strong>
+                            </span>
                         @endif
                     </div>
                 </div>
