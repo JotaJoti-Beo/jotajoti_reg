@@ -4,7 +4,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 9.24.0.
+ * Generated for Laravel 9.25.1.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -21561,7 +21561,7 @@ namespace  {
              *
              * @param string $column
              * @param string $operator
-             * @param \DateTimeInterface|string|null $value
+             * @param \DateTimeInterface|string|int|null $value
              * @param string $boolean
              * @return \Illuminate\Database\Query\Builder 
              * @static 
@@ -21577,7 +21577,7 @@ namespace  {
              *
              * @param string $column
              * @param string $operator
-             * @param \DateTimeInterface|string|null $value
+             * @param \DateTimeInterface|string|int|null $value
              * @return \Illuminate\Database\Query\Builder 
              * @static 
              */ 
@@ -21592,7 +21592,7 @@ namespace  {
              *
              * @param string $column
              * @param string $operator
-             * @param \DateTimeInterface|string|null $value
+             * @param \DateTimeInterface|string|int|null $value
              * @param string $boolean
              * @return \Illuminate\Database\Query\Builder 
              * @static 
@@ -21608,7 +21608,7 @@ namespace  {
              *
              * @param string $column
              * @param string $operator
-             * @param \DateTimeInterface|string|null $value
+             * @param \DateTimeInterface|string|int|null $value
              * @return \Illuminate\Database\Query\Builder 
              * @static 
              */ 
