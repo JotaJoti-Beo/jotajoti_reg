@@ -97,6 +97,17 @@
 
                 <br />
 
+                <div class="row has-feedback">
+                    <label for="phone" class="col-md-3 form-label"></label>
+                    <div class="col-md-9">
+                        <div class="input-group mb-3">
+                            {!! Captcha::display() !!}
+                        </div>
+                    </div>
+                 </div>
+
+                <br />
+
                 <button class="btn btn-success col-12" type="submit">Anmeldung senden</button>
             </form>
         </div>
