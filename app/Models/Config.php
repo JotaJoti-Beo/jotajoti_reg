@@ -16,7 +16,7 @@ class Config extends Model
         'jojo_start',
         'jojo_start_pio',
         'jojo_end',
-        'quota'
+        'quota',
     ];
 
     public $timestamps = true;
