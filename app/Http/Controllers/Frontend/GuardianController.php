@@ -28,7 +28,7 @@ class GuardianController
         $mail = $request->input('mail');
         $phone = $request->input('phone');
 
-        $guardian = Guardian::where('reference', '=', $uuid)->update([
+        Guardian::where('reference', '=', $uuid)->update([
             'first_name' => $first_name,
             'last_name' => $last_name,
             'mail' => $mail,
