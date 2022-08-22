@@ -42,7 +42,7 @@ Route::get('/participant/destroy/{pid}', [ParticipantController::class, 'destroy
 
 Auth::routes(['register' => false]);
 
-Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
     Route::redirect('/', '/admin/overwatch', 301);
 
     Route::get('/overwatch', [OverwatchController::class, 'index'])->name('overwatch');
@@ -82,7 +82,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::post('/places/update/{eid}', [PlacesController::class, 'update'])->name('update-places');
     Route::get('/places/destroy/{eid}', [PlacesController::class, 'destroy'])->name('destroy-places');
 
-    Route::resource('config', ConfigController::class)->only('index','edit', 'update');
+    Route::resource('config', ConfigController::class)->only('index', 'edit', 'update');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
     Route::get('/profile/update', [ProfileController::class, 'update'])->name('update-profile');
@@ -90,4 +90,3 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function(){
     Route::get('/print/pdf', [PrintController::class, 'pdf'])->name('print-pdf');
     Route::get('/print/excel', [PrintController::class, 'excel'])->name('print-excel');
 });
-
