@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Group;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class GroupsSeeder extends Seeder
@@ -33,7 +32,7 @@ class GroupsSeeder extends Seeder
             if ($group == null) {
                 Group::create([
                     'name' => $name,
-                    'quota' => 30
+                    'quota' => 30,
                 ]);
             }
         }
