@@ -3,24 +3,24 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Group;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use App\Models\Group;
 
 class GroupsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return Application|Factory|View
      */
-    public function index(Request $request){
-        if($request->input('search')  == null){
+    public function index(Request $request)
+    {
+        if ($request->input('search') == null) {
             $groups = Group::all();
         } else {
             $search_string = $request->input('search');
@@ -43,8 +43,7 @@ class GroupsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return RedirectResponse
      */
     public function store(Request $request)
@@ -64,7 +63,6 @@ class GroupsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param $gid
-     *
      * @return Application|Factory|View
      */
     public function edit($gid)
@@ -77,9 +75,8 @@ class GroupsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @param $gid
-     *
      * @return RedirectResponse
      */
     public function update(Request $request, $gid)
@@ -99,7 +96,6 @@ class GroupsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $gid
-     *
      * @return RedirectResponse
      */
     public function destroy($gid)
