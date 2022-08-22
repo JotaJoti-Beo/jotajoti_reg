@@ -8,11 +8,9 @@ class PrintController extends Controller
 {
     public function pdf()
     {
-
     }
 
     public function excel()
     {
-
     }
 }
