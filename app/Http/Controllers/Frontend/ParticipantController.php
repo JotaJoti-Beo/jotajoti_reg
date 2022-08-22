@@ -18,12 +18,10 @@ class ParticipantController
 
     public function edit()
     {
-
     }
 
     public function update()
     {
-
     }
 
     public function destroy($pid)
