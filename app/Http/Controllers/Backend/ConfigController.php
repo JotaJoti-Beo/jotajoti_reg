@@ -28,7 +28,6 @@ class ConfigController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param $cid
-     *
      * @return Application|Factory|View
      */
     public function edit($cid)
@@ -41,9 +40,8 @@ class ConfigController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @param $cid
-     *
      * @return RedirectResponse
      */
     public function update(Request $request, $cid)
