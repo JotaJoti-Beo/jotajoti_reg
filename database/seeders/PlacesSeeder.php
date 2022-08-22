@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Place;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class PlacesSeeder extends Seeder
@@ -22,7 +21,7 @@ class PlacesSeeder extends Seeder
                 'city' => 'Uetendorf',
                 'plz' => '3661',
                 'quota' => '32',
-            ]
+            ],
         ];
 
         foreach ($places_container as $new_place) {
