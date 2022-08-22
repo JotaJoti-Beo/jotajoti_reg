@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('participants', function(Blueprint $table){
+        Schema::table('participants', function (Blueprint $table) {
             $table->foreign('group_id')->references('id')->on('groups');
             $table->foreign('place_id')->references('id')->on('places');
             $table->foreign('guardian_id')->references('id')->on('guardians');
         });
 
-        Schema::table('files', function(Blueprint $table){
+        Schema::table('files', function (Blueprint $table) {
             $table->foreign('participant_id')->references('id')->on('participants');
         });
     }
