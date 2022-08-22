@@ -13,12 +13,13 @@ class File extends Model
 
     protected $fillable = [
         'name',
-        'participant_id'
+        'participant_id',
     ];
 
     public $timestamps = true;
 
-    public function participant(){
+    public function participant()
+    {
         return $this->hasOne(\App\Models\Participant::class);
     }
 }
