@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Guardian;
 use Illuminate\Http\Request;
 use Str;
+use Symfony\Component\Console\Input\Input;
+use Validator;
 
 class RegisterController extends Controller
 {
@@ -16,6 +18,10 @@ class RegisterController extends Controller
 
     public function registerGuardian(Request $request)
     {
+        $validate = Validator::make(Input::all(), [
+            'g-recaptcha-response' => 'required|captcha',
+        ]);
+
         $first_name = $request->input('first_name');
         $last_name = $request->input('last_name');
         $mail = $request->input('mail');
@@ -36,8 +42,6 @@ class RegisterController extends Controller
 
     public function completedGuardian()
     {
-
-
         return view('frontend.register.guardian.completed');
     }
 
