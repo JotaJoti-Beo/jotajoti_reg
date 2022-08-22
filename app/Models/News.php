@@ -13,7 +13,7 @@ class News extends Model
 
     protected $fillable = [
         'title',
-        'content'
+        'content',
     ];
 
     public $timestamps = true;
