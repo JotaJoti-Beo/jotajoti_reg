@@ -15,20 +15,19 @@ class PlacesController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return Application|Factory|View
      */
     public function index(Request $request)
     {
-        if($request->search == null){
+        if ($request->search == null) {
             $places = Place::all();
-        }else{
+        } else {
             $search_string = $request->search;
-            $places = Place::where("name", "LIKE", "%$search_string%")
-                ->orWhere("address", "LIKE", "%$search_string%")
-                ->orWhere("city", "LIKE", "%$search_string%")
-                ->orWhere("plz", "LIKE", "%$search_string%")->get();
+            $places = Place::where('name', 'LIKE', "%$search_string%")
+                ->orWhere('address', 'LIKE', "%$search_string%")
+                ->orWhere('city', 'LIKE', "%$search_string%")
+                ->orWhere('plz', 'LIKE', "%$search_string%")->get();
         }
 
         return view('backend.places.index', ['places' => $places]);
@@ -47,8 +46,7 @@ class PlacesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return RedirectResponse
      */
     public function store(Request $request)
@@ -86,7 +84,7 @@ class PlacesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @param $pid
      * @return RedirectResponse
      */
