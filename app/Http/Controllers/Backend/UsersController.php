@@ -16,19 +16,18 @@ class UsersController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return Application|Factory|View
      */
     public function index(Request $request): View|Factory|Application
     {
-        if($request->input("search") == null) {
+        if ($request->input('search') == null) {
             $users = User::all();
         } else {
             $search_string = $request->input('search');
-            $users = User::where("scout_name", "LIKE", "%$search_string%")
-                ->orWhere("first_name", "LIKE", "%$search_string%")
-                ->orWhere("last_name", "LIKE", "%$search_string%")->get();
+            $users = User::where('scout_name', 'LIKE', "%$search_string%")
+                ->orWhere('first_name', 'LIKE', "%$search_string%")
+                ->orWhere('last_name', 'LIKE', "%$search_string%")->get();
         }
 
         return view('backend.users.users', ['users' => $users]);
@@ -47,8 +46,7 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
@@ -83,7 +81,6 @@ class UsersController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param $uid
-     *
      * @return Application|Factory|View
      */
     public function edit($uid): View|Factory|Application
@@ -96,9 +93,8 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param                          $uid
-     *
+     * @param  Request  $request
+     * @param    $uid
      * @return RedirectResponse
      */
     public function update(Request $request, $uid): RedirectResponse
@@ -142,7 +138,6 @@ class UsersController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $uid
-     *
      * @return RedirectResponse
      */
     public function destroy($uid): RedirectResponse
