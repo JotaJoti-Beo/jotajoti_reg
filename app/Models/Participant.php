@@ -55,6 +55,6 @@ class Participant extends Model
 
     public function parent()
     {
-        return $this->hasOne(Parent::class);
+        return $this->hasOne(parent::class);
     }
 }
