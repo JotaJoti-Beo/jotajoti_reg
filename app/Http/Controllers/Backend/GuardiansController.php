@@ -15,18 +15,17 @@ class GuardiansController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return Application|Factory|View
      */
     public function index(Request $request): Factory|View|Application
     {
-        if($request->input('search') == null) {
+        if ($request->input('search') == null) {
             $guardians = Guardian::all();
         } else {
             $search_string = $request->input('search');
-            $guardians = Guardian::where("first_name", "LIKE", "%$search_string%")
-                ->orWhere("last_name", "LIKE", "%$search_string%")->get();
+            $guardians = Guardian::where('first_name', 'LIKE', "%$search_string%")
+                ->orWhere('last_name', 'LIKE', "%$search_string%")->get();
         }
 
         return view('backend.guardians.guardians', ['guardians' => $guardians]);
@@ -45,8 +44,7 @@ class GuardiansController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return RedirectResponse
      */
     public function store(Request $request): RedirectResponse
