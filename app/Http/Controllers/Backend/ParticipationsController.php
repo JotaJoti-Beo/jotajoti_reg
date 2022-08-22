@@ -17,8 +17,7 @@ class ParticipationsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return Application|Factory|View
      */
     public function index(Request $request)
@@ -52,8 +51,7 @@ class ParticipationsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
-     *
+     * @param  Request  $request
      * @return RedirectResponse
      */
     public function store(Request $request)
@@ -101,7 +99,6 @@ class ParticipationsController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param $pid
-     *
      * @return Factory|View
      */
     public function edit($pid)
@@ -115,9 +112,8 @@ class ParticipationsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param                          $pid
-     *
+     * @param  Request  $request
+     * @param    $pid
      * @return RedirectResponse
      */
     public function update(Request $request, $pid)
@@ -166,7 +162,6 @@ class ParticipationsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $uid
-     *
      * @return RedirectResponse
      */
     public function destroy($uid)
