@@ -20,12 +20,12 @@
     "src": "node_modules/font-awesome/fonts/fontawesome-webfont.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app.5daf47c8.js",
+    "file": "assets/app.cbc84f50.js",
     "src": "resources/js/app.js",
     "isEntry": true
   },
   "resources/sass/app.scss": {
-    "file": "assets/app.9ce846c9.css",
+    "file": "assets/app.07460ff6.css",
     "src": "resources/sass/app.scss",
     "isEntry": true
   }
