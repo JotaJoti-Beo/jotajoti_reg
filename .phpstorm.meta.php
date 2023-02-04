@@ -11,7 +11,6 @@ namespace PHPSTORM_META {
     */
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -73,6 +72,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -131,6 +132,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -169,7 +171,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -208,7 +209,6 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Container\Container::makeWith(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -270,6 +270,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -328,6 +330,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -366,7 +369,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -405,7 +407,6 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Contracts\Container\Container::get(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -467,6 +468,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -525,6 +528,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -563,7 +567,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -602,7 +605,6 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -664,6 +666,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -722,6 +726,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -760,7 +765,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -799,7 +803,6 @@ namespace PHPSTORM_META {
         ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -861,6 +864,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -919,6 +924,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -957,7 +963,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -996,7 +1001,6 @@ namespace PHPSTORM_META {
         ]));
     override(\App::get(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -1058,6 +1062,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -1116,6 +1122,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -1154,7 +1161,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -1193,7 +1199,6 @@ namespace PHPSTORM_META {
         ]));
     override(\App::make(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -1255,6 +1260,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -1313,6 +1320,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -1351,7 +1359,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -1390,7 +1397,6 @@ namespace PHPSTORM_META {
         ]));
     override(\App::makeWith(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -1452,6 +1458,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -1510,6 +1518,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -1548,7 +1557,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -1587,7 +1595,6 @@ namespace PHPSTORM_META {
         ]));
     override(\app(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -1649,6 +1656,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -1707,6 +1716,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -1745,7 +1755,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -1784,7 +1793,6 @@ namespace PHPSTORM_META {
         ]));
     override(\resolve(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -1846,6 +1854,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -1904,6 +1914,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -1942,7 +1953,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -1981,7 +1991,6 @@ namespace PHPSTORM_META {
         ]));
     override(\Psr\Container\ContainerInterface::get(0), map([
         '' => '@',
-            'Airbrake\Notifier' => \Airbrake\Notifier::class,
             'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
             'DNS1D' => \Milon\Barcode\DNS1D::class,
             'DNS2D' => \Milon\Barcode\DNS2D::class,
@@ -2043,6 +2052,8 @@ namespace PHPSTORM_META {
             'Illuminate\Foundation\Console\DocsCommand' => \Illuminate\Foundation\Console\DocsCommand::class,
             'Illuminate\Foundation\Console\DownCommand' => \Illuminate\Foundation\Console\DownCommand::class,
             'Illuminate\Foundation\Console\EnvironmentCommand' => \Illuminate\Foundation\Console\EnvironmentCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentDecryptCommand' => \Illuminate\Foundation\Console\EnvironmentDecryptCommand::class,
+            'Illuminate\Foundation\Console\EnvironmentEncryptCommand' => \Illuminate\Foundation\Console\EnvironmentEncryptCommand::class,
             'Illuminate\Foundation\Console\EventCacheCommand' => \Illuminate\Foundation\Console\EventCacheCommand::class,
             'Illuminate\Foundation\Console\EventClearCommand' => \Illuminate\Foundation\Console\EventClearCommand::class,
             'Illuminate\Foundation\Console\EventGenerateCommand' => \Illuminate\Foundation\Console\EventGenerateCommand::class,
@@ -2101,6 +2112,7 @@ namespace PHPSTORM_META {
             'Illuminate\Queue\Console\WorkCommand' => \Illuminate\Queue\Console\WorkCommand::class,
             'Illuminate\Routing\Console\ControllerMakeCommand' => \Illuminate\Routing\Console\ControllerMakeCommand::class,
             'Illuminate\Routing\Console\MiddlewareMakeCommand' => \Illuminate\Routing\Console\MiddlewareMakeCommand::class,
+            'Illuminate\Routing\Contracts\CallableDispatcher' => \Illuminate\Routing\CallableDispatcher::class,
             'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
             'Illuminate\Session\Console\SessionTableCommand' => \Illuminate\Session\Console\SessionTableCommand::class,
             'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
@@ -2139,7 +2151,6 @@ namespace PHPSTORM_META {
             'db.factory' => \Illuminate\Database\Connectors\ConnectionFactory::class,
             'db.schema' => \Illuminate\Database\Schema\MySqlBuilder::class,
             'db.transactions' => \Illuminate\Database\DatabaseTransactionsManager::class,
-            'encrypter' => \Illuminate\Encryption\Encrypter::class,
             'events' => \Illuminate\Events\Dispatcher::class,
             'files' => \Illuminate\Filesystem\Filesystem::class,
             'filesystem' => \Illuminate\Filesystem\FilesystemManager::class,
@@ -2178,6 +2189,10 @@ namespace PHPSTORM_META {
         ]));
 
 
+    override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::mock(0), map(["" => "@&\Mockery\MockInterface"]));
+    override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::partialMock(0), map(["" => "@&\Mockery\MockInterface"]));
+    override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::instance(0), type(1));
+    override(\Illuminate\Foundation\Testing\Concerns\InteractsWithContainer::spy(0), map(["" => "@&\Mockery\MockInterface"]));
     override(\Illuminate\Support\Arr::add(0), type(0));
     override(\Illuminate\Support\Arr::except(0), type(0));
     override(\Illuminate\Support\Arr::first(0), elementType(0));
