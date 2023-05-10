@@ -11,7 +11,7 @@
         "dropzone": "^6.0.0-beta.2",
         "font-awesome": "^4.7.0",
         "jquery": "^3.6.4",
-        "laravel-vite-plugin": "^0.7.3",
+        "laravel-vite-plugin": "^0.7.5",
         "lodash": "^4.17.21",
         "postcss": "^8.4.23",
         "sass": "^1.62.1",
