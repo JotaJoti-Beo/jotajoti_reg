@@ -121,21 +121,21 @@
         },
         {
             "name": "buzz/laravel-google-captcha",
-            "version": "v2.3.5",
+            "version": "v2.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thinhbuzz/laravel-google-captcha.git",
-                "reference": "645a87e5dc607de2bc2a93d9c9e90db1f730adb4"
+                "reference": "948e4d24e7dceab323a9b28c393a5aacdd579ac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thinhbuzz/laravel-google-captcha/zipball/645a87e5dc607de2bc2a93d9c9e90db1f730adb4",
-                "reference": "645a87e5dc607de2bc2a93d9c9e90db1f730adb4",
+                "url": "https://api.github.com/repos/thinhbuzz/laravel-google-captcha/zipball/948e4d24e7dceab323a9b28c393a5aacdd579ac0",
+                "reference": "948e4d24e7dceab323a9b28c393a5aacdd579ac0",
                 "shasum": ""
             },
             "require": {
                 "google/recaptcha": "1.*",
-                "illuminate/support": "5.*|6.*|7.*|8.*|9.*|10.*",
+                "illuminate/support": "5.*|6.*|7.*|8.*|9.*|10.*|^11.0",
                 "php": ">=5.4.0"
             },
             "type": "library",
@@ -172,24 +172,19 @@
                 "google captcha",
                 "laravel",
                 "laravel 10",
+                "laravel 11",
                 "laravel 5",
                 "laravel 6",
                 "laravel 7",
                 "laravel 8",
                 "laravel 9",
-                "laravel10",
-                "laravel5",
-                "laravel6",
-                "laravel7",
-                "laravel8",
-                "laravel9",
                 "recaptcha"
             ],
             "support": {
                 "issues": "https://github.com/thinhbuzz/laravel-google-captcha/issues",
-                "source": "https://github.com/thinhbuzz/laravel-google-captcha/tree/v2.3.5"
+                "source": "https://github.com/thinhbuzz/laravel-google-captcha/tree/v2.3.6"
             },
-            "time": "2023-02-14T15:20:08+00:00"
+            "time": "2024-02-29T14:40:52+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
