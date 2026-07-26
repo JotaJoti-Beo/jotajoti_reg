@@ -661,10 +661,10 @@ rolldown@~1.1.5:
     "@rolldown/binding-win32-arm64-msvc" "1.1.5"
     "@rolldown/binding-win32-x64-msvc" "1.1.5"
 
-sass@^1.101.5:
-  version "1.101.5"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.101.5.tgz#820ba5afa5ecdb76afc41d085689699a425be469"
-  integrity sha512-lSQKnEQmUH8yXmCxE2IzdrA6PIDPXivAWUjmfaUYtBMvzCZzFsNwVM63UOSTEid0Cp5LnoHD2PD8yWeiaAFqJg==
+sass@^1.101.7:
+  version "1.101.7"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.101.7.tgz#0e5ec0c5dca414d1d3b92cc1fe415d0c6108dce3"
+  integrity sha512-cDeUYU0dhwKVbpYg/ppsjyuoddxYhWlJOkRoI7+/iZsaSp7iowWDfm+tL2HcUafedWBDvbf/+hx0QRgKG4JSHA==
   dependencies:
     chokidar "^5.0.0"
     immutable "^5.1.5"
