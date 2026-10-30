@@ -7,7 +7,7 @@
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.8",
-        "axios": "^1.20",
+        "axios": "^1.21",
         "bootstrap": "^5.3.8",
         "dropzone": "^6.3.5",
         "font-awesome": "^4.7.0",
