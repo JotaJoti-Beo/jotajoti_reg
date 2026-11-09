@@ -427,10 +427,10 @@ jquery@^3.7.1:
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.7.1.tgz#083ef98927c9a6a74d05a6af02806566d16274de"
   integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
 
-laravel-vite-plugin@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/laravel-vite-plugin/-/laravel-vite-plugin-3.2.0.tgz#fc5c958cb1f315c6af39384e94b64c32c4e3a3a6"
-  integrity sha512-xSxY9Gzeb/eancd8WeK09piAFP+a6i5QIBqNCKNv9L0Eq6wziwzSem7F1GvMSrtjMh5F/QVKFxn8t9naGOA66A==
+laravel-vite-plugin@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/laravel-vite-plugin/-/laravel-vite-plugin-3.2.1.tgz#4f7b8d6697cec2594631fccf26e517875138fe62"
+  integrity sha512-VqWn6U4YC1zRYVDlR/hu7JHesXqwj+DsEBSlVAe7al1MlAE5aYslyuyYV7v47DCGLGKJZxfbaZnApsIHdYIBJA==
   dependencies:
     picocolors "^1.0.0"
     tinyglobby "^0.2.12"
